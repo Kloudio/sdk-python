@@ -242,16 +242,17 @@ class ReportsApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def execute_report(self, api_key, report_id, **kwargs):  # noqa: E501
+    def execute_report(self, body, api_key, report_id, **kwargs):  # noqa: E501
         """Execute a report  # noqa: E501
 
         Use this method to execute a report.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.execute_report(api_key, report_id, async_req=True)
+        >>> thread = api.execute_report(body, api_key, report_id, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
+        :param ReportsRunRequest body: (required)
         :param str api_key: Enter your API key here (required)
         :param str report_id: (required)
         :return: None
@@ -260,21 +261,22 @@ class ReportsApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.execute_report_with_http_info(api_key, report_id, **kwargs)  # noqa: E501
+            return self.execute_report_with_http_info(body, api_key, report_id, **kwargs)  # noqa: E501
         else:
-            (data) = self.execute_report_with_http_info(api_key, report_id, **kwargs)  # noqa: E501
+            (data) = self.execute_report_with_http_info(body, api_key, report_id, **kwargs)  # noqa: E501
             return data
 
-    def execute_report_with_http_info(self, api_key, report_id, **kwargs):  # noqa: E501
+    def execute_report_with_http_info(self, body, api_key, report_id, **kwargs):  # noqa: E501
         """Execute a report  # noqa: E501
 
         Use this method to execute a report.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.execute_report_with_http_info(api_key, report_id, async_req=True)
+        >>> thread = api.execute_report_with_http_info(body, api_key, report_id, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
+        :param ReportsRunRequest body: (required)
         :param str api_key: Enter your API key here (required)
         :param str report_id: (required)
         :return: None
@@ -282,7 +284,7 @@ class ReportsApi(object):
                  returns the request thread.
         """
 
-        all_params = ['api_key', 'report_id']  # noqa: E501
+        all_params = ['body', 'api_key', 'report_id']  # noqa: E501
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -297,6 +299,10 @@ class ReportsApi(object):
                 )
             params[key] = val
         del params['kwargs']
+        # verify the required parameter 'body' is set
+        if ('body' not in params or
+                params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `execute_report`")  # noqa: E501
         # verify the required parameter 'api_key' is set
         if ('api_key' not in params or
                 params['api_key'] is None):
@@ -322,15 +328,21 @@ class ReportsApi(object):
         local_var_files = {}
 
         body_params = None
+        if 'body' in params:
+            body_params = params['body']
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
             ['application/json'])  # noqa: E501
 
         # Authentication setting
         auth_settings = []  # noqa: E501
 
         return self.api_client.call_api(
-            '/v1/reports/execute/{report_id}', 'POST',
+            '/v1/reports/{report_id}/execute', 'POST',
             path_params,
             query_params,
             header_params,

@@ -35,3 +35,4 @@ from kloud.models.report_share_request import ReportShareRequest
 from kloud.models.report_share_response import ReportShareResponse
 from kloud.models.reports_request import ReportsRequest
 from kloud.models.reports_response import ReportsResponse
+from kloud.models.reports_run_request import ReportsRunRequest

@@ -13,7 +13,7 @@
 from setuptools import setup, find_packages  # noqa: H301
 
 NAME = "kloud"
-VERSION = "0.091"
+VERSION = "0.09"
 # To install the library, run the following
 #
 # python setup.py install

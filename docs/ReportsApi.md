@@ -6,7 +6,7 @@ Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**create_report**](ReportsApi.md#create_report) | **POST** /v1/reports | Create a report
 [**delete_report**](ReportsApi.md#delete_report) | **DELETE** /v1/reports/{report_id} | Delete a report
-[**execute_report**](ReportsApi.md#execute_report) | **POST** /v1/reports/execute/{report_id} | Execute a report
+[**execute_report**](ReportsApi.md#execute_report) | **POST** /v1/reports/{report_id}/execute | Execute a report
 [**get_report**](ReportsApi.md#get_report) | **GET** /v1/reports/{report_id} | Get a report
 [**get_reports**](ReportsApi.md#get_reports) | **GET** /v1/reports | Get all report
 [**share_report**](ReportsApi.md#share_report) | **POST** /v1/reports/share/{report_id} | Share a report
@@ -113,7 +113,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **execute_report**
-> execute_report(api_key, report_id)
+> execute_report(body, api_key, report_id)
 
 Execute a report
 
@@ -129,12 +129,13 @@ from pprint import pprint
 
 # create an instance of the API class
 api_instance = kloud.ReportsApi()
+body = kloud.ReportsRunRequest() # ReportsRunRequest | 
 api_key = 'api_key_example' # str | Enter your API key here
 report_id = 'report_id_example' # str | 
 
 try:
     # Execute a report
-    api_instance.execute_report(api_key, report_id)
+    api_instance.execute_report(body, api_key, report_id)
 except ApiException as e:
     print("Exception when calling ReportsApi->execute_report: %s\n" % e)
 ```
@@ -143,6 +144,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **body** | [**ReportsRunRequest**](ReportsRunRequest.md)|  | 
  **api_key** | **str**| Enter your API key here | 
  **report_id** | **str**|  | 
 
@@ -156,7 +158,7 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
