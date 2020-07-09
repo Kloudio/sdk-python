@@ -160,6 +160,11 @@ Class | Method | HTTP request | Description
 *JobsApi* | [**jobs_controller_suspend_job**](docs/JobsApi.md#jobs_controller_suspend_job) | **POST** /v1/jobs/suspend | Suspend jobs
 *JobsApi* | [**jobs_controller_update_job**](docs/JobsApi.md#jobs_controller_update_job) | **PUT** /v1/jobs | Update a job
 *JobsApi* | [**run_job**](docs/JobsApi.md#run_job) | **POST** /v1/jobs/{job_id}/run | Run a job
+*LicenseApi* | [**create_license**](docs/LicenseApi.md#create_license) | **POST** /v1/license | Create a license
+*LicenseApi* | [**delete_license**](docs/LicenseApi.md#delete_license) | **DELETE** /v1/license/{account_id}/{license_id} | Delete a license
+*LicenseApi* | [**get_licenses**](docs/LicenseApi.md#get_licenses) | **GET** /v1/license | Get all licenses
+*LicenseApi* | [**update_license**](docs/LicenseApi.md#update_license) | **PUT** /v1/license | Update a license
+*RegisterApi* | [**register_user**](docs/RegisterApi.md#register_user) | **POST** /v1/register | Register a user
 *ReportsApi* | [**create_report**](docs/ReportsApi.md#create_report) | **POST** /v1/reports | Create a report
 *ReportsApi* | [**delete_report**](docs/ReportsApi.md#delete_report) | **DELETE** /v1/reports/{report_id} | Delete a report
 *ReportsApi* | [**execute_report**](docs/ReportsApi.md#execute_report) | **POST** /v1/reports/{report_id}/execute | Execute a report
@@ -178,6 +183,8 @@ Class | Method | HTTP request | Description
  - [ErrorResponse](docs/ErrorResponse.md)
  - [JobArray](docs/JobArray.md)
  - [JobDto](docs/JobDto.md)
+ - [NewLicense](docs/NewLicense.md)
+ - [NewUser](docs/NewUser.md)
  - [ReportDelResponse](docs/ReportDelResponse.md)
  - [ReportShareRequest](docs/ReportShareRequest.md)
  - [ReportShareResponse](docs/ReportShareResponse.md)

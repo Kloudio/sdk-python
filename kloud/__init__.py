@@ -17,6 +17,8 @@ from __future__ import absolute_import
 # import apis into sdk package
 from kloud.api.connections_api import ConnectionsApi
 from kloud.api.jobs_api import JobsApi
+from kloud.api.license_api import LicenseApi
+from kloud.api.register_api import RegisterApi
 from kloud.api.reports_api import ReportsApi
 # import ApiClient
 from kloud.api_client import ApiClient
@@ -30,6 +32,8 @@ from kloud.models.connection_share_response import ConnectionShareResponse
 from kloud.models.error_response import ErrorResponse
 from kloud.models.job_array import JobArray
 from kloud.models.job_dto import JobDto
+from kloud.models.new_license import NewLicense
+from kloud.models.new_user import NewUser
 from kloud.models.report_del_response import ReportDelResponse
 from kloud.models.report_share_request import ReportShareRequest
 from kloud.models.report_share_response import ReportShareResponse

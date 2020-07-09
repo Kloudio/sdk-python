@@ -22,6 +22,8 @@ from kloud.models.connection_share_response import ConnectionShareResponse
 from kloud.models.error_response import ErrorResponse
 from kloud.models.job_array import JobArray
 from kloud.models.job_dto import JobDto
+from kloud.models.new_license import NewLicense
+from kloud.models.new_user import NewUser
 from kloud.models.report_del_response import ReportDelResponse
 from kloud.models.report_share_request import ReportShareRequest
 from kloud.models.report_share_response import ReportShareResponse
