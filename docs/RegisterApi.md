@@ -1,48 +1,59 @@
-# kloud.RegisterApi
+# kloudio.RegisterApi
 
-All URIs are relative to */*
+All URIs are relative to *http://localhost*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**register_user**](RegisterApi.md#register_user) | **POST** /v1/register | Register a user
 
+
 # **register_user**
-> register_user(body, api_key)
+> object register_user(api_key, new_user)
 
 Register a user
 
 Use this method to register a new user.
 
 ### Example
+
 ```python
 from __future__ import print_function
 import time
-import kloud
-from kloud.rest import ApiException
+import kloudio
+from kloudio.rest import ApiException
 from pprint import pprint
+# Defining the host is optional and defaults to http://localhost
+# See configuration.py for a list of all supported configuration parameters.
+configuration = kloudio.Configuration(
+    host = "http://localhost"
+)
 
-# create an instance of the API class
-api_instance = kloud.RegisterApi()
-body = kloud.NewUser() # NewUser | 
-api_key = 'api_key_example' # str | Enter your API key here
 
-try:
-    # Register a user
-    api_instance.register_user(body, api_key)
-except ApiException as e:
-    print("Exception when calling RegisterApi->register_user: %s\n" % e)
+# Enter a context with an instance of the API client
+with kloudio.ApiClient() as api_client:
+    # Create an instance of the API class
+    api_instance = kloudio.RegisterApi(api_client)
+    api_key = 'api_key_example' # str | Enter your API key here
+new_user = kloudio.NewUser() # NewUser | 
+
+    try:
+        # Register a user
+        api_response = api_instance.register_user(api_key, new_user)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling RegisterApi->register_user: %s\n" % e)
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**NewUser**](NewUser.md)|  | 
  **api_key** | **str**| Enter your API key here | 
+ **new_user** | [**NewUser**](NewUser.md)|  | 
 
 ### Return type
 
-void (empty response body)
+**object**
 
 ### Authorization
 
@@ -51,7 +62,15 @@ No authorization required
 ### HTTP request headers
 
  - **Content-Type**: application/json
- - **Accept**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**201** | OK |  -  |
+**400** | Bad request, check message for more information on the error |  -  |
+**401** | Unauthorized, check your API key |  -  |
+**403** | Forbidden, possible CORS error |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
