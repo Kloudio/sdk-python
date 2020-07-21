@@ -14,7 +14,7 @@ import six
 from kloudio.configuration import Configuration
 
 
-class ConnectionShareResponse(object):
+class ShareConnection(object):
     """
     """
 
@@ -26,49 +26,49 @@ class ConnectionShareResponse(object):
                             and the value is json key in definition.
     """
     openapi_types = {
-        'id': 'str',
-        'object': 'str',
-        'shared_with': 'object'
+        'id': 'float',
+        'email': 'str',
+        'access': 'str'
     }
 
     attribute_map = {
         'id': 'id',
-        'object': 'object',
-        'shared_with': 'sharedWith'
+        'email': 'email',
+        'access': 'access'
     }
 
-    def __init__(self, id=None, object=None, shared_with=None, local_vars_configuration=None):  # noqa: E501
-        """ConnectionShareResponse - a model defined in OpenAPI"""  # noqa: E501
+    def __init__(self, id=None, email=None, access=None, local_vars_configuration=None):  # noqa: E501
+        """ShareConnection - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
         self._id = None
-        self._object = None
-        self._shared_with = None
+        self._email = None
+        self._access = None
         self.discriminator = None
 
         self.id = id
-        self.object = object
-        self.shared_with = shared_with
+        self.email = email
+        self.access = access
 
     @property
     def id(self):
-        """Gets the id of this ConnectionShareResponse.  # noqa: E501
+        """Gets the id of this ShareConnection.  # noqa: E501
 
 
-        :return: The id of this ConnectionShareResponse.  # noqa: E501
-        :rtype: str
+        :return: The id of this ShareConnection.  # noqa: E501
+        :rtype: float
         """
         return self._id
 
     @id.setter
     def id(self, id):
-        """Sets the id of this ConnectionShareResponse.
+        """Sets the id of this ShareConnection.
 
 
-        :param id: The id of this ConnectionShareResponse.  # noqa: E501
-        :type id: str
+        :param id: The id of this ShareConnection.  # noqa: E501
+        :type id: float
         """
         if self.local_vars_configuration.client_side_validation and id is None:  # noqa: E501
             raise ValueError("Invalid value for `id`, must not be `None`")  # noqa: E501
@@ -76,50 +76,50 @@ class ConnectionShareResponse(object):
         self._id = id
 
     @property
-    def object(self):
-        """Gets the object of this ConnectionShareResponse.  # noqa: E501
+    def email(self):
+        """Gets the email of this ShareConnection.  # noqa: E501
 
 
-        :return: The object of this ConnectionShareResponse.  # noqa: E501
+        :return: The email of this ShareConnection.  # noqa: E501
         :rtype: str
         """
-        return self._object
+        return self._email
 
-    @object.setter
-    def object(self, object):
-        """Sets the object of this ConnectionShareResponse.
+    @email.setter
+    def email(self, email):
+        """Sets the email of this ShareConnection.
 
 
-        :param object: The object of this ConnectionShareResponse.  # noqa: E501
-        :type object: str
+        :param email: The email of this ShareConnection.  # noqa: E501
+        :type email: str
         """
-        if self.local_vars_configuration.client_side_validation and object is None:  # noqa: E501
-            raise ValueError("Invalid value for `object`, must not be `None`")  # noqa: E501
+        if self.local_vars_configuration.client_side_validation and email is None:  # noqa: E501
+            raise ValueError("Invalid value for `email`, must not be `None`")  # noqa: E501
 
-        self._object = object
+        self._email = email
 
     @property
-    def shared_with(self):
-        """Gets the shared_with of this ConnectionShareResponse.  # noqa: E501
+    def access(self):
+        """Gets the access of this ShareConnection.  # noqa: E501
 
 
-        :return: The shared_with of this ConnectionShareResponse.  # noqa: E501
-        :rtype: object
+        :return: The access of this ShareConnection.  # noqa: E501
+        :rtype: str
         """
-        return self._shared_with
+        return self._access
 
-    @shared_with.setter
-    def shared_with(self, shared_with):
-        """Sets the shared_with of this ConnectionShareResponse.
+    @access.setter
+    def access(self, access):
+        """Sets the access of this ShareConnection.
 
 
-        :param shared_with: The shared_with of this ConnectionShareResponse.  # noqa: E501
-        :type shared_with: object
+        :param access: The access of this ShareConnection.  # noqa: E501
+        :type access: str
         """
-        if self.local_vars_configuration.client_side_validation and shared_with is None:  # noqa: E501
-            raise ValueError("Invalid value for `shared_with`, must not be `None`")  # noqa: E501
+        if self.local_vars_configuration.client_side_validation and access is None:  # noqa: E501
+            raise ValueError("Invalid value for `access`, must not be `None`")  # noqa: E501
 
-        self._shared_with = shared_with
+        self._access = access
 
     def to_dict(self):
         """Returns the model properties as a dict"""
@@ -155,14 +155,14 @@ class ConnectionShareResponse(object):
 
     def __eq__(self, other):
         """Returns true if both objects are equal"""
-        if not isinstance(other, ConnectionShareResponse):
+        if not isinstance(other, ShareConnection):
             return False
 
         return self.to_dict() == other.to_dict()
 
     def __ne__(self, other):
         """Returns true if both objects are not equal"""
-        if not isinstance(other, ConnectionShareResponse):
+        if not isinstance(other, ShareConnection):
             return True
 
         return self.to_dict() != other.to_dict()

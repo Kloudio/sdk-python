@@ -1,6 +1,6 @@
 # kloudio.ReportsApi
 
-All URIs are relative to *http://localhost*
+All URIs are relative to *http://localhost:8089*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -14,7 +14,7 @@ Method | HTTP request | Description
 
 
 # **create_report**
-> ReportsResponse create_report(api_key, reports_request)
+> ReportsResponse create_report(new_report)
 
 Create a report
 
@@ -22,29 +22,43 @@ Use this method to create a new report. On successful creation, it returns the r
 
 ### Example
 
+* Api Key Authentication (bearer):
 ```python
 from __future__ import print_function
 import time
 import kloudio
 from kloudio.rest import ApiException
 from pprint import pprint
-# Defining the host is optional and defaults to http://localhost
+# Defining the host is optional and defaults to http://localhost:8089
 # See configuration.py for a list of all supported configuration parameters.
 configuration = kloudio.Configuration(
-    host = "http://localhost"
+    host = "http://localhost:8089"
 )
 
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure API key authorization: bearer
+configuration = kloudio.Configuration(
+    host = "http://localhost:8089",
+    api_key = {
+        'bearer': 'YOUR_API_KEY'
+    }
+)
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['bearer'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-with kloudio.ApiClient() as api_client:
+with kloudio.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = kloudio.ReportsApi(api_client)
-    api_key = 'api_key_example' # str | Enter your API key here
-reports_request = kloudio.ReportsRequest() # ReportsRequest | To create a new report, send the following properties
+    new_report = kloudio.NewReport() # NewReport | To create a new report, send the following properties
 
     try:
         # Create a report
-        api_response = api_instance.create_report(api_key, reports_request)
+        api_response = api_instance.create_report(new_report)
         pprint(api_response)
     except ApiException as e:
         print("Exception when calling ReportsApi->create_report: %s\n" % e)
@@ -54,8 +68,7 @@ reports_request = kloudio.ReportsRequest() # ReportsRequest | To create a new re
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **api_key** | **str**| Enter your API key here | 
- **reports_request** | [**ReportsRequest**](ReportsRequest.md)| To create a new report, send the following properties | 
+ **new_report** | [**NewReport**](NewReport.md)| To create a new report, send the following properties | 
 
 ### Return type
 
@@ -63,7 +76,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[bearer](../README.md#bearer)
 
 ### HTTP request headers
 
@@ -81,7 +94,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **delete_report**
-> ReportDelResponse delete_report(api_key, report_id)
+> ReportDelResponse delete_report(report_id)
 
 Delete a report
 
@@ -89,29 +102,43 @@ Use this method to delete a report.
 
 ### Example
 
+* Api Key Authentication (bearer):
 ```python
 from __future__ import print_function
 import time
 import kloudio
 from kloudio.rest import ApiException
 from pprint import pprint
-# Defining the host is optional and defaults to http://localhost
+# Defining the host is optional and defaults to http://localhost:8089
 # See configuration.py for a list of all supported configuration parameters.
 configuration = kloudio.Configuration(
-    host = "http://localhost"
+    host = "http://localhost:8089"
 )
 
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure API key authorization: bearer
+configuration = kloudio.Configuration(
+    host = "http://localhost:8089",
+    api_key = {
+        'bearer': 'YOUR_API_KEY'
+    }
+)
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['bearer'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-with kloudio.ApiClient() as api_client:
+with kloudio.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = kloudio.ReportsApi(api_client)
-    api_key = 'api_key_example' # str | Enter your API key here
-report_id = 'report_id_example' # str | 
+    report_id = 'report_id_example' # str | 
 
     try:
         # Delete a report
-        api_response = api_instance.delete_report(api_key, report_id)
+        api_response = api_instance.delete_report(report_id)
         pprint(api_response)
     except ApiException as e:
         print("Exception when calling ReportsApi->delete_report: %s\n" % e)
@@ -121,7 +148,6 @@ report_id = 'report_id_example' # str |
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **api_key** | **str**| Enter your API key here | 
  **report_id** | **str**|  | 
 
 ### Return type
@@ -130,7 +156,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[bearer](../README.md#bearer)
 
 ### HTTP request headers
 
@@ -148,7 +174,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **execute_report**
-> execute_report(api_key, report_id, reports_run_request)
+> execute_report(report_id, run_report)
 
 Execute a report
 
@@ -156,30 +182,44 @@ Use this method to execute a report.
 
 ### Example
 
+* Api Key Authentication (bearer):
 ```python
 from __future__ import print_function
 import time
 import kloudio
 from kloudio.rest import ApiException
 from pprint import pprint
-# Defining the host is optional and defaults to http://localhost
+# Defining the host is optional and defaults to http://localhost:8089
 # See configuration.py for a list of all supported configuration parameters.
 configuration = kloudio.Configuration(
-    host = "http://localhost"
+    host = "http://localhost:8089"
 )
 
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure API key authorization: bearer
+configuration = kloudio.Configuration(
+    host = "http://localhost:8089",
+    api_key = {
+        'bearer': 'YOUR_API_KEY'
+    }
+)
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['bearer'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-with kloudio.ApiClient() as api_client:
+with kloudio.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = kloudio.ReportsApi(api_client)
-    api_key = 'api_key_example' # str | Enter your API key here
-report_id = 'report_id_example' # str | 
-reports_run_request = kloudio.ReportsRunRequest() # ReportsRunRequest | 
+    report_id = 'report_id_example' # str | 
+run_report = kloudio.RunReport() # RunReport | 
 
     try:
         # Execute a report
-        api_instance.execute_report(api_key, report_id, reports_run_request)
+        api_instance.execute_report(report_id, run_report)
     except ApiException as e:
         print("Exception when calling ReportsApi->execute_report: %s\n" % e)
 ```
@@ -188,9 +228,8 @@ reports_run_request = kloudio.ReportsRunRequest() # ReportsRunRequest |
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **api_key** | **str**| Enter your API key here | 
  **report_id** | **str**|  | 
- **reports_run_request** | [**ReportsRunRequest**](ReportsRunRequest.md)|  | 
+ **run_report** | [**RunReport**](RunReport.md)|  | 
 
 ### Return type
 
@@ -198,7 +237,7 @@ void (empty response body)
 
 ### Authorization
 
-No authorization required
+[bearer](../README.md#bearer)
 
 ### HTTP request headers
 
@@ -216,7 +255,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_report**
-> ReportsResponse get_report(api_key, report_id)
+> ReportsResponse get_report(report_id)
 
 Get a report
 
@@ -224,29 +263,43 @@ Use this method to get a report. On successful fetch, it returns the report obje
 
 ### Example
 
+* Api Key Authentication (bearer):
 ```python
 from __future__ import print_function
 import time
 import kloudio
 from kloudio.rest import ApiException
 from pprint import pprint
-# Defining the host is optional and defaults to http://localhost
+# Defining the host is optional and defaults to http://localhost:8089
 # See configuration.py for a list of all supported configuration parameters.
 configuration = kloudio.Configuration(
-    host = "http://localhost"
+    host = "http://localhost:8089"
 )
 
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure API key authorization: bearer
+configuration = kloudio.Configuration(
+    host = "http://localhost:8089",
+    api_key = {
+        'bearer': 'YOUR_API_KEY'
+    }
+)
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['bearer'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-with kloudio.ApiClient() as api_client:
+with kloudio.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = kloudio.ReportsApi(api_client)
-    api_key = 'api_key_example' # str | Enter your API key here
-report_id = 'report_id_example' # str | 
+    report_id = 'report_id_example' # str | 
 
     try:
         # Get a report
-        api_response = api_instance.get_report(api_key, report_id)
+        api_response = api_instance.get_report(report_id)
         pprint(api_response)
     except ApiException as e:
         print("Exception when calling ReportsApi->get_report: %s\n" % e)
@@ -256,7 +309,6 @@ report_id = 'report_id_example' # str |
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **api_key** | **str**| Enter your API key here | 
  **report_id** | **str**|  | 
 
 ### Return type
@@ -265,7 +317,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[bearer](../README.md#bearer)
 
 ### HTTP request headers
 
@@ -283,7 +335,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_reports**
-> list[ReportsResponse] get_reports(api_key)
+> list[ReportsResponse] get_reports()
 
 Get all report
 
@@ -291,38 +343,49 @@ Use this method to get all report. On successful fetch, it returns the report ob
 
 ### Example
 
+* Api Key Authentication (bearer):
 ```python
 from __future__ import print_function
 import time
 import kloudio
 from kloudio.rest import ApiException
 from pprint import pprint
-# Defining the host is optional and defaults to http://localhost
+# Defining the host is optional and defaults to http://localhost:8089
 # See configuration.py for a list of all supported configuration parameters.
 configuration = kloudio.Configuration(
-    host = "http://localhost"
+    host = "http://localhost:8089"
 )
 
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure API key authorization: bearer
+configuration = kloudio.Configuration(
+    host = "http://localhost:8089",
+    api_key = {
+        'bearer': 'YOUR_API_KEY'
+    }
+)
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['bearer'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-with kloudio.ApiClient() as api_client:
+with kloudio.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = kloudio.ReportsApi(api_client)
-    api_key = 'api_key_example' # str | Enter your API key here
-
+    
     try:
         # Get all report
-        api_response = api_instance.get_reports(api_key)
+        api_response = api_instance.get_reports()
         pprint(api_response)
     except ApiException as e:
         print("Exception when calling ReportsApi->get_reports: %s\n" % e)
 ```
 
 ### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **api_key** | **str**| Enter your API key here | 
+This endpoint does not need any parameter.
 
 ### Return type
 
@@ -330,7 +393,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[bearer](../README.md#bearer)
 
 ### HTTP request headers
 
@@ -347,7 +410,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **share_report**
-> ReportShareResponse share_report(api_key, report_id, report_share_request)
+> ReportShareResponse share_report(report_id, share_report)
 
 Share a report
 
@@ -355,30 +418,44 @@ Use this method to share a report.
 
 ### Example
 
+* Api Key Authentication (bearer):
 ```python
 from __future__ import print_function
 import time
 import kloudio
 from kloudio.rest import ApiException
 from pprint import pprint
-# Defining the host is optional and defaults to http://localhost
+# Defining the host is optional and defaults to http://localhost:8089
 # See configuration.py for a list of all supported configuration parameters.
 configuration = kloudio.Configuration(
-    host = "http://localhost"
+    host = "http://localhost:8089"
 )
 
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure API key authorization: bearer
+configuration = kloudio.Configuration(
+    host = "http://localhost:8089",
+    api_key = {
+        'bearer': 'YOUR_API_KEY'
+    }
+)
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['bearer'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-with kloudio.ApiClient() as api_client:
+with kloudio.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = kloudio.ReportsApi(api_client)
-    api_key = 'api_key_example' # str | Enter your API key here
-report_id = 'report_id_example' # str | 
-report_share_request = [kloudio.ReportShareRequest()] # list[ReportShareRequest] | 
+    report_id = 'report_id_example' # str | 
+share_report = [kloudio.ShareReport()] # list[ShareReport] | 
 
     try:
         # Share a report
-        api_response = api_instance.share_report(api_key, report_id, report_share_request)
+        api_response = api_instance.share_report(report_id, share_report)
         pprint(api_response)
     except ApiException as e:
         print("Exception when calling ReportsApi->share_report: %s\n" % e)
@@ -388,9 +465,8 @@ report_share_request = [kloudio.ReportShareRequest()] # list[ReportShareRequest]
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **api_key** | **str**| Enter your API key here | 
  **report_id** | **str**|  | 
- **report_share_request** | [**list[ReportShareRequest]**](ReportShareRequest.md)|  | 
+ **share_report** | [**list[ShareReport]**](ShareReport.md)|  | 
 
 ### Return type
 
@@ -398,7 +474,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[bearer](../README.md#bearer)
 
 ### HTTP request headers
 
@@ -416,7 +492,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **update_report**
-> ReportsResponse update_report(api_key, report_id, reports_request)
+> ReportsResponse update_report(report_id, new_report)
 
 Update a report
 
@@ -424,30 +500,44 @@ Use this method to update an existing report. On successful creation, it returns
 
 ### Example
 
+* Api Key Authentication (bearer):
 ```python
 from __future__ import print_function
 import time
 import kloudio
 from kloudio.rest import ApiException
 from pprint import pprint
-# Defining the host is optional and defaults to http://localhost
+# Defining the host is optional and defaults to http://localhost:8089
 # See configuration.py for a list of all supported configuration parameters.
 configuration = kloudio.Configuration(
-    host = "http://localhost"
+    host = "http://localhost:8089"
 )
 
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure API key authorization: bearer
+configuration = kloudio.Configuration(
+    host = "http://localhost:8089",
+    api_key = {
+        'bearer': 'YOUR_API_KEY'
+    }
+)
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['bearer'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-with kloudio.ApiClient() as api_client:
+with kloudio.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = kloudio.ReportsApi(api_client)
-    api_key = 'api_key_example' # str | Enter your API key here
-report_id = 'report_id_example' # str | 
-reports_request = kloudio.ReportsRequest() # ReportsRequest | To update an existing report, send the following properties
+    report_id = 'report_id_example' # str | 
+new_report = kloudio.NewReport() # NewReport | To update an existing report, send the following properties
 
     try:
         # Update a report
-        api_response = api_instance.update_report(api_key, report_id, reports_request)
+        api_response = api_instance.update_report(report_id, new_report)
         pprint(api_response)
     except ApiException as e:
         print("Exception when calling ReportsApi->update_report: %s\n" % e)
@@ -457,9 +547,8 @@ reports_request = kloudio.ReportsRequest() # ReportsRequest | To update an exist
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **api_key** | **str**| Enter your API key here | 
  **report_id** | **str**|  | 
- **reports_request** | [**ReportsRequest**](ReportsRequest.md)| To update an existing report, send the following properties | 
+ **new_report** | [**NewReport**](NewReport.md)| To update an existing report, send the following properties | 
 
 ### Return type
 
@@ -467,7 +556,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[bearer](../README.md#bearer)
 
 ### HTTP request headers
 

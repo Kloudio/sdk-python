@@ -1,12 +1,10 @@
-# NewLicense
+# RunReport
 
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**first_name** | **str** | First name | 
-**last_name** | **str** |  | 
-**email** | **str** |  | 
-**role** | **str** |  | 
+**_query_params** | [**object**](.md) |  | [optional] 
+**preview_rows** | **float** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

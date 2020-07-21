@@ -1,6 +1,6 @@
 # kloudio.JobsApi
 
-All URIs are relative to *http://localhost*
+All URIs are relative to *http://localhost:8089*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -17,7 +17,7 @@ Method | HTTP request | Description
 
 
 # **delete_job**
-> delete_job(api_key, job_id)
+> delete_job(job_id)
 
 Delete a job
 
@@ -25,29 +25,43 @@ Use this method to delete a job by its ID
 
 ### Example
 
+* Api Key Authentication (bearer):
 ```python
 from __future__ import print_function
 import time
 import kloudio
 from kloudio.rest import ApiException
 from pprint import pprint
-# Defining the host is optional and defaults to http://localhost
+# Defining the host is optional and defaults to http://localhost:8089
 # See configuration.py for a list of all supported configuration parameters.
 configuration = kloudio.Configuration(
-    host = "http://localhost"
+    host = "http://localhost:8089"
 )
 
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure API key authorization: bearer
+configuration = kloudio.Configuration(
+    host = "http://localhost:8089",
+    api_key = {
+        'bearer': 'YOUR_API_KEY'
+    }
+)
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['bearer'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-with kloudio.ApiClient() as api_client:
+with kloudio.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = kloudio.JobsApi(api_client)
-    api_key = 'api_key_example' # str | Enter your API key here
-job_id = 'job_id_example' # str | 
+    job_id = 'job_id_example' # str | 
 
     try:
         # Delete a job
-        api_instance.delete_job(api_key, job_id)
+        api_instance.delete_job(job_id)
     except ApiException as e:
         print("Exception when calling JobsApi->delete_job: %s\n" % e)
 ```
@@ -56,7 +70,6 @@ job_id = 'job_id_example' # str |
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **api_key** | **str**| Enter your API key here | 
  **job_id** | **str**|  | 
 
 ### Return type
@@ -65,7 +78,7 @@ void (empty response body)
 
 ### Authorization
 
-No authorization required
+[bearer](../README.md#bearer)
 
 ### HTTP request headers
 
@@ -82,7 +95,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **disable_job**
-> disable_job(api_key, job_id)
+> disable_job(job_id)
 
 Disable a job
 
@@ -90,29 +103,43 @@ Use this method to disable a job by its ID
 
 ### Example
 
+* Api Key Authentication (bearer):
 ```python
 from __future__ import print_function
 import time
 import kloudio
 from kloudio.rest import ApiException
 from pprint import pprint
-# Defining the host is optional and defaults to http://localhost
+# Defining the host is optional and defaults to http://localhost:8089
 # See configuration.py for a list of all supported configuration parameters.
 configuration = kloudio.Configuration(
-    host = "http://localhost"
+    host = "http://localhost:8089"
 )
 
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure API key authorization: bearer
+configuration = kloudio.Configuration(
+    host = "http://localhost:8089",
+    api_key = {
+        'bearer': 'YOUR_API_KEY'
+    }
+)
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['bearer'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-with kloudio.ApiClient() as api_client:
+with kloudio.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = kloudio.JobsApi(api_client)
-    api_key = 'api_key_example' # str | Enter your API key here
-job_id = 'job_id_example' # str | 
+    job_id = 'job_id_example' # str | 
 
     try:
         # Disable a job
-        api_instance.disable_job(api_key, job_id)
+        api_instance.disable_job(job_id)
     except ApiException as e:
         print("Exception when calling JobsApi->disable_job: %s\n" % e)
 ```
@@ -121,7 +148,6 @@ job_id = 'job_id_example' # str |
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **api_key** | **str**| Enter your API key here | 
  **job_id** | **str**|  | 
 
 ### Return type
@@ -130,7 +156,7 @@ void (empty response body)
 
 ### Authorization
 
-No authorization required
+[bearer](../README.md#bearer)
 
 ### HTTP request headers
 
@@ -147,7 +173,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **enable_job**
-> enable_job(api_key, job_id)
+> enable_job(job_id)
 
 Enable a job
 
@@ -155,29 +181,43 @@ Use this method to enable a job by its ID
 
 ### Example
 
+* Api Key Authentication (bearer):
 ```python
 from __future__ import print_function
 import time
 import kloudio
 from kloudio.rest import ApiException
 from pprint import pprint
-# Defining the host is optional and defaults to http://localhost
+# Defining the host is optional and defaults to http://localhost:8089
 # See configuration.py for a list of all supported configuration parameters.
 configuration = kloudio.Configuration(
-    host = "http://localhost"
+    host = "http://localhost:8089"
 )
 
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure API key authorization: bearer
+configuration = kloudio.Configuration(
+    host = "http://localhost:8089",
+    api_key = {
+        'bearer': 'YOUR_API_KEY'
+    }
+)
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['bearer'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-with kloudio.ApiClient() as api_client:
+with kloudio.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = kloudio.JobsApi(api_client)
-    api_key = 'api_key_example' # str | Enter your API key here
-job_id = 'job_id_example' # str | 
+    job_id = 'job_id_example' # str | 
 
     try:
         # Enable a job
-        api_instance.enable_job(api_key, job_id)
+        api_instance.enable_job(job_id)
     except ApiException as e:
         print("Exception when calling JobsApi->enable_job: %s\n" % e)
 ```
@@ -186,7 +226,6 @@ job_id = 'job_id_example' # str |
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **api_key** | **str**| Enter your API key here | 
  **job_id** | **str**|  | 
 
 ### Return type
@@ -195,7 +234,7 @@ void (empty response body)
 
 ### Authorization
 
-No authorization required
+[bearer](../README.md#bearer)
 
 ### HTTP request headers
 
@@ -212,7 +251,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_job**
-> JobDto get_job(api_key, job_id)
+> NewJob get_job(job_id)
 
 Get a job
 
@@ -220,29 +259,43 @@ Use this method to get all a job by its ID
 
 ### Example
 
+* Api Key Authentication (bearer):
 ```python
 from __future__ import print_function
 import time
 import kloudio
 from kloudio.rest import ApiException
 from pprint import pprint
-# Defining the host is optional and defaults to http://localhost
+# Defining the host is optional and defaults to http://localhost:8089
 # See configuration.py for a list of all supported configuration parameters.
 configuration = kloudio.Configuration(
-    host = "http://localhost"
+    host = "http://localhost:8089"
 )
 
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure API key authorization: bearer
+configuration = kloudio.Configuration(
+    host = "http://localhost:8089",
+    api_key = {
+        'bearer': 'YOUR_API_KEY'
+    }
+)
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['bearer'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-with kloudio.ApiClient() as api_client:
+with kloudio.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = kloudio.JobsApi(api_client)
-    api_key = 'api_key_example' # str | Enter your API key here
-job_id = 'job_id_example' # str | 
+    job_id = 'job_id_example' # str | 
 
     try:
         # Get a job
-        api_response = api_instance.get_job(api_key, job_id)
+        api_response = api_instance.get_job(job_id)
         pprint(api_response)
     except ApiException as e:
         print("Exception when calling JobsApi->get_job: %s\n" % e)
@@ -252,16 +305,15 @@ job_id = 'job_id_example' # str |
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **api_key** | **str**| Enter your API key here | 
  **job_id** | **str**|  | 
 
 ### Return type
 
-[**JobDto**](JobDto.md)
+[**NewJob**](NewJob.md)
 
 ### Authorization
 
-No authorization required
+[bearer](../README.md#bearer)
 
 ### HTTP request headers
 
@@ -278,7 +330,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **jobs_controller_create_job**
-> JobDto jobs_controller_create_job(api_key, job_dto)
+> NewJob jobs_controller_create_job(new_job)
 
 Create a job
 
@@ -286,29 +338,43 @@ Use this method to create a new job. On successful creation, it returns the job 
 
 ### Example
 
+* Api Key Authentication (bearer):
 ```python
 from __future__ import print_function
 import time
 import kloudio
 from kloudio.rest import ApiException
 from pprint import pprint
-# Defining the host is optional and defaults to http://localhost
+# Defining the host is optional and defaults to http://localhost:8089
 # See configuration.py for a list of all supported configuration parameters.
 configuration = kloudio.Configuration(
-    host = "http://localhost"
+    host = "http://localhost:8089"
 )
 
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure API key authorization: bearer
+configuration = kloudio.Configuration(
+    host = "http://localhost:8089",
+    api_key = {
+        'bearer': 'YOUR_API_KEY'
+    }
+)
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['bearer'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-with kloudio.ApiClient() as api_client:
+with kloudio.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = kloudio.JobsApi(api_client)
-    api_key = 'api_key_example' # str | Enter your API key here
-job_dto = kloudio.JobDto() # JobDto | To create a new job, send the following properties
+    new_job = kloudio.NewJob() # NewJob | To create a new job, send the following properties
 
     try:
         # Create a job
-        api_response = api_instance.jobs_controller_create_job(api_key, job_dto)
+        api_response = api_instance.jobs_controller_create_job(new_job)
         pprint(api_response)
     except ApiException as e:
         print("Exception when calling JobsApi->jobs_controller_create_job: %s\n" % e)
@@ -318,16 +384,15 @@ job_dto = kloudio.JobDto() # JobDto | To create a new job, send the following pr
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **api_key** | **str**| Enter your API key here | 
- **job_dto** | [**JobDto**](JobDto.md)| To create a new job, send the following properties | 
+ **new_job** | [**NewJob**](NewJob.md)| To create a new job, send the following properties | 
 
 ### Return type
 
-[**JobDto**](JobDto.md)
+[**NewJob**](NewJob.md)
 
 ### Authorization
 
-No authorization required
+[bearer](../README.md#bearer)
 
 ### HTTP request headers
 
@@ -345,7 +410,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **jobs_controller_get_jobs**
-> list[JobDto] jobs_controller_get_jobs(api_key)
+> list[NewJob] jobs_controller_get_jobs()
 
 Get all jobs
 
@@ -353,46 +418,57 @@ Use this method to get all jobs you have created.
 
 ### Example
 
+* Api Key Authentication (bearer):
 ```python
 from __future__ import print_function
 import time
 import kloudio
 from kloudio.rest import ApiException
 from pprint import pprint
-# Defining the host is optional and defaults to http://localhost
+# Defining the host is optional and defaults to http://localhost:8089
 # See configuration.py for a list of all supported configuration parameters.
 configuration = kloudio.Configuration(
-    host = "http://localhost"
+    host = "http://localhost:8089"
 )
 
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure API key authorization: bearer
+configuration = kloudio.Configuration(
+    host = "http://localhost:8089",
+    api_key = {
+        'bearer': 'YOUR_API_KEY'
+    }
+)
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['bearer'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-with kloudio.ApiClient() as api_client:
+with kloudio.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = kloudio.JobsApi(api_client)
-    api_key = 'api_key_example' # str | Enter your API key here
-
+    
     try:
         # Get all jobs
-        api_response = api_instance.jobs_controller_get_jobs(api_key)
+        api_response = api_instance.jobs_controller_get_jobs()
         pprint(api_response)
     except ApiException as e:
         print("Exception when calling JobsApi->jobs_controller_get_jobs: %s\n" % e)
 ```
 
 ### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **api_key** | **str**| Enter your API key here | 
+This endpoint does not need any parameter.
 
 ### Return type
 
-[**list[JobDto]**](JobDto.md)
+[**list[NewJob]**](NewJob.md)
 
 ### Authorization
 
-No authorization required
+[bearer](../README.md#bearer)
 
 ### HTTP request headers
 
@@ -409,7 +485,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **jobs_controller_resume_job**
-> jobs_controller_resume_job(api_key, job_array)
+> jobs_controller_resume_job(job_array)
 
 Resume jobs
 
@@ -417,29 +493,43 @@ Use this method to suspend jobs.
 
 ### Example
 
+* Api Key Authentication (bearer):
 ```python
 from __future__ import print_function
 import time
 import kloudio
 from kloudio.rest import ApiException
 from pprint import pprint
-# Defining the host is optional and defaults to http://localhost
+# Defining the host is optional and defaults to http://localhost:8089
 # See configuration.py for a list of all supported configuration parameters.
 configuration = kloudio.Configuration(
-    host = "http://localhost"
+    host = "http://localhost:8089"
 )
 
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure API key authorization: bearer
+configuration = kloudio.Configuration(
+    host = "http://localhost:8089",
+    api_key = {
+        'bearer': 'YOUR_API_KEY'
+    }
+)
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['bearer'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-with kloudio.ApiClient() as api_client:
+with kloudio.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = kloudio.JobsApi(api_client)
-    api_key = 'api_key_example' # str | Enter your API key here
-job_array = kloudio.JobArray() # JobArray | To resume a job, pass an array of the job IDs.
+    job_array = kloudio.JobArray() # JobArray | To resume a job, pass an array of the job IDs.
 
     try:
         # Resume jobs
-        api_instance.jobs_controller_resume_job(api_key, job_array)
+        api_instance.jobs_controller_resume_job(job_array)
     except ApiException as e:
         print("Exception when calling JobsApi->jobs_controller_resume_job: %s\n" % e)
 ```
@@ -448,7 +538,6 @@ job_array = kloudio.JobArray() # JobArray | To resume a job, pass an array of th
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **api_key** | **str**| Enter your API key here | 
  **job_array** | [**JobArray**](JobArray.md)| To resume a job, pass an array of the job IDs. | 
 
 ### Return type
@@ -457,7 +546,7 @@ void (empty response body)
 
 ### Authorization
 
-No authorization required
+[bearer](../README.md#bearer)
 
 ### HTTP request headers
 
@@ -475,7 +564,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **jobs_controller_suspend_job**
-> jobs_controller_suspend_job(api_key, job_array)
+> jobs_controller_suspend_job(job_array)
 
 Suspend jobs
 
@@ -483,29 +572,43 @@ Use this method to suspend jobs.
 
 ### Example
 
+* Api Key Authentication (bearer):
 ```python
 from __future__ import print_function
 import time
 import kloudio
 from kloudio.rest import ApiException
 from pprint import pprint
-# Defining the host is optional and defaults to http://localhost
+# Defining the host is optional and defaults to http://localhost:8089
 # See configuration.py for a list of all supported configuration parameters.
 configuration = kloudio.Configuration(
-    host = "http://localhost"
+    host = "http://localhost:8089"
 )
 
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure API key authorization: bearer
+configuration = kloudio.Configuration(
+    host = "http://localhost:8089",
+    api_key = {
+        'bearer': 'YOUR_API_KEY'
+    }
+)
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['bearer'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-with kloudio.ApiClient() as api_client:
+with kloudio.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = kloudio.JobsApi(api_client)
-    api_key = 'api_key_example' # str | Enter your API key here
-job_array = kloudio.JobArray() # JobArray | To suspend a job, pass an array of the job IDs.
+    job_array = kloudio.JobArray() # JobArray | To suspend a job, pass an array of the job IDs.
 
     try:
         # Suspend jobs
-        api_instance.jobs_controller_suspend_job(api_key, job_array)
+        api_instance.jobs_controller_suspend_job(job_array)
     except ApiException as e:
         print("Exception when calling JobsApi->jobs_controller_suspend_job: %s\n" % e)
 ```
@@ -514,7 +617,6 @@ job_array = kloudio.JobArray() # JobArray | To suspend a job, pass an array of t
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **api_key** | **str**| Enter your API key here | 
  **job_array** | [**JobArray**](JobArray.md)| To suspend a job, pass an array of the job IDs. | 
 
 ### Return type
@@ -523,7 +625,7 @@ void (empty response body)
 
 ### Authorization
 
-No authorization required
+[bearer](../README.md#bearer)
 
 ### HTTP request headers
 
@@ -541,7 +643,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **jobs_controller_update_job**
-> JobDto jobs_controller_update_job(api_key, job_dto)
+> NewJob jobs_controller_update_job(new_job)
 
 Update a job
 
@@ -549,29 +651,43 @@ Use this method to update a job. On successful update, it returns the job object
 
 ### Example
 
+* Api Key Authentication (bearer):
 ```python
 from __future__ import print_function
 import time
 import kloudio
 from kloudio.rest import ApiException
 from pprint import pprint
-# Defining the host is optional and defaults to http://localhost
+# Defining the host is optional and defaults to http://localhost:8089
 # See configuration.py for a list of all supported configuration parameters.
 configuration = kloudio.Configuration(
-    host = "http://localhost"
+    host = "http://localhost:8089"
 )
 
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure API key authorization: bearer
+configuration = kloudio.Configuration(
+    host = "http://localhost:8089",
+    api_key = {
+        'bearer': 'YOUR_API_KEY'
+    }
+)
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['bearer'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-with kloudio.ApiClient() as api_client:
+with kloudio.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = kloudio.JobsApi(api_client)
-    api_key = 'api_key_example' # str | Enter your API key here
-job_dto = kloudio.JobDto() # JobDto | To update a job, send the following properties
+    new_job = kloudio.NewJob() # NewJob | To update a job, send the following properties
 
     try:
         # Update a job
-        api_response = api_instance.jobs_controller_update_job(api_key, job_dto)
+        api_response = api_instance.jobs_controller_update_job(new_job)
         pprint(api_response)
     except ApiException as e:
         print("Exception when calling JobsApi->jobs_controller_update_job: %s\n" % e)
@@ -581,16 +697,15 @@ job_dto = kloudio.JobDto() # JobDto | To update a job, send the following proper
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **api_key** | **str**| Enter your API key here | 
- **job_dto** | [**JobDto**](JobDto.md)| To update a job, send the following properties | 
+ **new_job** | [**NewJob**](NewJob.md)| To update a job, send the following properties | 
 
 ### Return type
 
-[**JobDto**](JobDto.md)
+[**NewJob**](NewJob.md)
 
 ### Authorization
 
-No authorization required
+[bearer](../README.md#bearer)
 
 ### HTTP request headers
 
@@ -608,7 +723,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **run_job**
-> run_job(api_key, job_id)
+> run_job(job_id)
 
 Run a job
 
@@ -616,29 +731,43 @@ Use this method to run a job by its ID
 
 ### Example
 
+* Api Key Authentication (bearer):
 ```python
 from __future__ import print_function
 import time
 import kloudio
 from kloudio.rest import ApiException
 from pprint import pprint
-# Defining the host is optional and defaults to http://localhost
+# Defining the host is optional and defaults to http://localhost:8089
 # See configuration.py for a list of all supported configuration parameters.
 configuration = kloudio.Configuration(
-    host = "http://localhost"
+    host = "http://localhost:8089"
 )
 
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure API key authorization: bearer
+configuration = kloudio.Configuration(
+    host = "http://localhost:8089",
+    api_key = {
+        'bearer': 'YOUR_API_KEY'
+    }
+)
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['bearer'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-with kloudio.ApiClient() as api_client:
+with kloudio.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = kloudio.JobsApi(api_client)
-    api_key = 'api_key_example' # str | Enter your API key here
-job_id = 'job_id_example' # str | 
+    job_id = 'job_id_example' # str | 
 
     try:
         # Run a job
-        api_instance.run_job(api_key, job_id)
+        api_instance.run_job(job_id)
     except ApiException as e:
         print("Exception when calling JobsApi->run_job: %s\n" % e)
 ```
@@ -647,7 +776,6 @@ job_id = 'job_id_example' # str |
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **api_key** | **str**| Enter your API key here | 
  **job_id** | **str**|  | 
 
 ### Return type
@@ -656,7 +784,7 @@ void (empty response body)
 
 ### Authorization
 
-No authorization required
+[bearer](../README.md#bearer)
 
 ### HTTP request headers
 

@@ -1,6 +1,6 @@
 # kloudio.ConnectionsApi
 
-All URIs are relative to *http://localhost*
+All URIs are relative to *http://localhost:8089*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -14,7 +14,7 @@ Method | HTTP request | Description
 
 
 # **clone_connection**
-> ConnectionRespose clone_connection(api_key, connection_id)
+> ConnectionRespose clone_connection(connection_id)
 
 Clone a connection
 
@@ -22,29 +22,43 @@ Use this method to clone an existing connection
 
 ### Example
 
+* Api Key Authentication (bearer):
 ```python
 from __future__ import print_function
 import time
 import kloudio
 from kloudio.rest import ApiException
 from pprint import pprint
-# Defining the host is optional and defaults to http://localhost
+# Defining the host is optional and defaults to http://localhost:8089
 # See configuration.py for a list of all supported configuration parameters.
 configuration = kloudio.Configuration(
-    host = "http://localhost"
+    host = "http://localhost:8089"
 )
 
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure API key authorization: bearer
+configuration = kloudio.Configuration(
+    host = "http://localhost:8089",
+    api_key = {
+        'bearer': 'YOUR_API_KEY'
+    }
+)
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['bearer'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-with kloudio.ApiClient() as api_client:
+with kloudio.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = kloudio.ConnectionsApi(api_client)
-    api_key = 'api_key_example' # str | Enter your API key here
-connection_id = 'connection_id_example' # str | 
+    connection_id = 'connection_id_example' # str | 
 
     try:
         # Clone a connection
-        api_response = api_instance.clone_connection(api_key, connection_id)
+        api_response = api_instance.clone_connection(connection_id)
         pprint(api_response)
     except ApiException as e:
         print("Exception when calling ConnectionsApi->clone_connection: %s\n" % e)
@@ -54,7 +68,6 @@ connection_id = 'connection_id_example' # str |
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **api_key** | **str**| Enter your API key here | 
  **connection_id** | **str**|  | 
 
 ### Return type
@@ -63,7 +76,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[bearer](../README.md#bearer)
 
 ### HTTP request headers
 
@@ -81,7 +94,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **create_connection**
-> ConnectionRespose create_connection(api_key, connection_request)
+> ConnectionRespose create_connection(new_connection)
 
 Create a connection
 
@@ -89,29 +102,43 @@ Use this method to create a new connection. On successful creation, it returns t
 
 ### Example
 
+* Api Key Authentication (bearer):
 ```python
 from __future__ import print_function
 import time
 import kloudio
 from kloudio.rest import ApiException
 from pprint import pprint
-# Defining the host is optional and defaults to http://localhost
+# Defining the host is optional and defaults to http://localhost:8089
 # See configuration.py for a list of all supported configuration parameters.
 configuration = kloudio.Configuration(
-    host = "http://localhost"
+    host = "http://localhost:8089"
 )
 
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure API key authorization: bearer
+configuration = kloudio.Configuration(
+    host = "http://localhost:8089",
+    api_key = {
+        'bearer': 'YOUR_API_KEY'
+    }
+)
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['bearer'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-with kloudio.ApiClient() as api_client:
+with kloudio.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = kloudio.ConnectionsApi(api_client)
-    api_key = 'api_key_example' # str | Enter your API key here
-connection_request = kloudio.ConnectionRequest() # ConnectionRequest | To create a new connection, send the following properties
+    new_connection = kloudio.NewConnection() # NewConnection | To create a new connection, send the following properties
 
     try:
         # Create a connection
-        api_response = api_instance.create_connection(api_key, connection_request)
+        api_response = api_instance.create_connection(new_connection)
         pprint(api_response)
     except ApiException as e:
         print("Exception when calling ConnectionsApi->create_connection: %s\n" % e)
@@ -121,8 +148,7 @@ connection_request = kloudio.ConnectionRequest() # ConnectionRequest | To create
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **api_key** | **str**| Enter your API key here | 
- **connection_request** | [**ConnectionRequest**](ConnectionRequest.md)| To create a new connection, send the following properties | 
+ **new_connection** | [**NewConnection**](NewConnection.md)| To create a new connection, send the following properties | 
 
 ### Return type
 
@@ -130,7 +156,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[bearer](../README.md#bearer)
 
 ### HTTP request headers
 
@@ -148,7 +174,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **delete_connection**
-> ConnectionDelResponse delete_connection(api_key, connection_id)
+> ConnectionDelResponse delete_connection(connection_id)
 
 Delete a connection
 
@@ -156,29 +182,43 @@ Use this method to delete a connection by the ID
 
 ### Example
 
+* Api Key Authentication (bearer):
 ```python
 from __future__ import print_function
 import time
 import kloudio
 from kloudio.rest import ApiException
 from pprint import pprint
-# Defining the host is optional and defaults to http://localhost
+# Defining the host is optional and defaults to http://localhost:8089
 # See configuration.py for a list of all supported configuration parameters.
 configuration = kloudio.Configuration(
-    host = "http://localhost"
+    host = "http://localhost:8089"
 )
 
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure API key authorization: bearer
+configuration = kloudio.Configuration(
+    host = "http://localhost:8089",
+    api_key = {
+        'bearer': 'YOUR_API_KEY'
+    }
+)
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['bearer'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-with kloudio.ApiClient() as api_client:
+with kloudio.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = kloudio.ConnectionsApi(api_client)
-    api_key = 'api_key_example' # str | Enter your API key here
-connection_id = 'connection_id_example' # str | 
+    connection_id = 'connection_id_example' # str | 
 
     try:
         # Delete a connection
-        api_response = api_instance.delete_connection(api_key, connection_id)
+        api_response = api_instance.delete_connection(connection_id)
         pprint(api_response)
     except ApiException as e:
         print("Exception when calling ConnectionsApi->delete_connection: %s\n" % e)
@@ -188,7 +228,6 @@ connection_id = 'connection_id_example' # str |
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **api_key** | **str**| Enter your API key here | 
  **connection_id** | **str**|  | 
 
 ### Return type
@@ -197,7 +236,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[bearer](../README.md#bearer)
 
 ### HTTP request headers
 
@@ -215,7 +254,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **retrieve_connection**
-> ConnectionRespose retrieve_connection(api_key, connection_id)
+> ConnectionRespose retrieve_connection(connection_id)
 
 Get a connection
 
@@ -223,29 +262,43 @@ Use this method to get a connection by the ID
 
 ### Example
 
+* Api Key Authentication (bearer):
 ```python
 from __future__ import print_function
 import time
 import kloudio
 from kloudio.rest import ApiException
 from pprint import pprint
-# Defining the host is optional and defaults to http://localhost
+# Defining the host is optional and defaults to http://localhost:8089
 # See configuration.py for a list of all supported configuration parameters.
 configuration = kloudio.Configuration(
-    host = "http://localhost"
+    host = "http://localhost:8089"
 )
 
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure API key authorization: bearer
+configuration = kloudio.Configuration(
+    host = "http://localhost:8089",
+    api_key = {
+        'bearer': 'YOUR_API_KEY'
+    }
+)
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['bearer'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-with kloudio.ApiClient() as api_client:
+with kloudio.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = kloudio.ConnectionsApi(api_client)
-    api_key = 'api_key_example' # str | Enter your API key here
-connection_id = 'connection_id_example' # str | 
+    connection_id = 'connection_id_example' # str | 
 
     try:
         # Get a connection
-        api_response = api_instance.retrieve_connection(api_key, connection_id)
+        api_response = api_instance.retrieve_connection(connection_id)
         pprint(api_response)
     except ApiException as e:
         print("Exception when calling ConnectionsApi->retrieve_connection: %s\n" % e)
@@ -255,7 +308,6 @@ connection_id = 'connection_id_example' # str |
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **api_key** | **str**| Enter your API key here | 
  **connection_id** | **str**|  | 
 
 ### Return type
@@ -264,7 +316,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[bearer](../README.md#bearer)
 
 ### HTTP request headers
 
@@ -282,7 +334,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **retrieve_connections**
-> list[ConnectionRespose] retrieve_connections(api_key)
+> list[ConnectionRespose] retrieve_connections()
 
 Get all connections
 
@@ -290,38 +342,49 @@ Use this method to get all connections you have created and have been shared wit
 
 ### Example
 
+* Api Key Authentication (bearer):
 ```python
 from __future__ import print_function
 import time
 import kloudio
 from kloudio.rest import ApiException
 from pprint import pprint
-# Defining the host is optional and defaults to http://localhost
+# Defining the host is optional and defaults to http://localhost:8089
 # See configuration.py for a list of all supported configuration parameters.
 configuration = kloudio.Configuration(
-    host = "http://localhost"
+    host = "http://localhost:8089"
 )
 
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure API key authorization: bearer
+configuration = kloudio.Configuration(
+    host = "http://localhost:8089",
+    api_key = {
+        'bearer': 'YOUR_API_KEY'
+    }
+)
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['bearer'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-with kloudio.ApiClient() as api_client:
+with kloudio.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = kloudio.ConnectionsApi(api_client)
-    api_key = 'api_key_example' # str | Enter your API key here
-
+    
     try:
         # Get all connections
-        api_response = api_instance.retrieve_connections(api_key)
+        api_response = api_instance.retrieve_connections()
         pprint(api_response)
     except ApiException as e:
         print("Exception when calling ConnectionsApi->retrieve_connections: %s\n" % e)
 ```
 
 ### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **api_key** | **str**| Enter your API key here | 
+This endpoint does not need any parameter.
 
 ### Return type
 
@@ -329,7 +392,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[bearer](../README.md#bearer)
 
 ### HTTP request headers
 
@@ -346,7 +409,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **share_connection**
-> ConnectionShareResponse share_connection(api_key, connection_id, connection_share_request)
+> ConnectionShareResponse share_connection(connection_id, share_connection)
 
 Share a connection
 
@@ -354,30 +417,44 @@ Use this method to share an existing connection with other members
 
 ### Example
 
+* Api Key Authentication (bearer):
 ```python
 from __future__ import print_function
 import time
 import kloudio
 from kloudio.rest import ApiException
 from pprint import pprint
-# Defining the host is optional and defaults to http://localhost
+# Defining the host is optional and defaults to http://localhost:8089
 # See configuration.py for a list of all supported configuration parameters.
 configuration = kloudio.Configuration(
-    host = "http://localhost"
+    host = "http://localhost:8089"
 )
 
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure API key authorization: bearer
+configuration = kloudio.Configuration(
+    host = "http://localhost:8089",
+    api_key = {
+        'bearer': 'YOUR_API_KEY'
+    }
+)
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['bearer'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-with kloudio.ApiClient() as api_client:
+with kloudio.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = kloudio.ConnectionsApi(api_client)
-    api_key = 'api_key_example' # str | Enter your API key here
-connection_id = 'connection_id_example' # str | 
-connection_share_request = [kloudio.ConnectionShareRequest()] # list[ConnectionShareRequest] | 
+    connection_id = 'connection_id_example' # str | 
+share_connection = [kloudio.ShareConnection()] # list[ShareConnection] | 
 
     try:
         # Share a connection
-        api_response = api_instance.share_connection(api_key, connection_id, connection_share_request)
+        api_response = api_instance.share_connection(connection_id, share_connection)
         pprint(api_response)
     except ApiException as e:
         print("Exception when calling ConnectionsApi->share_connection: %s\n" % e)
@@ -387,9 +464,8 @@ connection_share_request = [kloudio.ConnectionShareRequest()] # list[ConnectionS
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **api_key** | **str**| Enter your API key here | 
  **connection_id** | **str**|  | 
- **connection_share_request** | [**list[ConnectionShareRequest]**](ConnectionShareRequest.md)|  | 
+ **share_connection** | [**list[ShareConnection]**](ShareConnection.md)|  | 
 
 ### Return type
 
@@ -397,7 +473,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[bearer](../README.md#bearer)
 
 ### HTTP request headers
 
@@ -415,7 +491,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **update_connection**
-> ConnectionRespose update_connection(api_key, connection_id, connection_update_request)
+> ConnectionRespose update_connection(connection_id, update_connection)
 
 Update a connection
 
@@ -423,30 +499,44 @@ Use this method to update a new connection. To update a connection, pass in the 
 
 ### Example
 
+* Api Key Authentication (bearer):
 ```python
 from __future__ import print_function
 import time
 import kloudio
 from kloudio.rest import ApiException
 from pprint import pprint
-# Defining the host is optional and defaults to http://localhost
+# Defining the host is optional and defaults to http://localhost:8089
 # See configuration.py for a list of all supported configuration parameters.
 configuration = kloudio.Configuration(
-    host = "http://localhost"
+    host = "http://localhost:8089"
 )
 
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure API key authorization: bearer
+configuration = kloudio.Configuration(
+    host = "http://localhost:8089",
+    api_key = {
+        'bearer': 'YOUR_API_KEY'
+    }
+)
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['bearer'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-with kloudio.ApiClient() as api_client:
+with kloudio.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = kloudio.ConnectionsApi(api_client)
-    api_key = 'api_key_example' # str | Enter your API key here
-connection_id = 'connection_id_example' # str | 
-connection_update_request = kloudio.ConnectionUpdateRequest() # ConnectionUpdateRequest | Pass in the properties you wish to change as an object in the body of the request
+    connection_id = 'connection_id_example' # str | 
+update_connection = kloudio.UpdateConnection() # UpdateConnection | Pass in the properties you wish to change as an object in the body of the request
 
     try:
         # Update a connection
-        api_response = api_instance.update_connection(api_key, connection_id, connection_update_request)
+        api_response = api_instance.update_connection(connection_id, update_connection)
         pprint(api_response)
     except ApiException as e:
         print("Exception when calling ConnectionsApi->update_connection: %s\n" % e)
@@ -456,9 +546,8 @@ connection_update_request = kloudio.ConnectionUpdateRequest() # ConnectionUpdate
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **api_key** | **str**| Enter your API key here | 
  **connection_id** | **str**|  | 
- **connection_update_request** | [**ConnectionUpdateRequest**](ConnectionUpdateRequest.md)| Pass in the properties you wish to change as an object in the body of the request | 
+ **update_connection** | [**UpdateConnection**](UpdateConnection.md)| Pass in the properties you wish to change as an object in the body of the request | 
 
 ### Return type
 
@@ -466,7 +555,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[bearer](../README.md#bearer)
 
 ### HTTP request headers
 

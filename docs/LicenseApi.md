@@ -1,6 +1,6 @@
 # kloudio.LicenseApi
 
-All URIs are relative to *http://localhost*
+All URIs are relative to *http://localhost:8089*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -11,7 +11,7 @@ Method | HTTP request | Description
 
 
 # **create_license**
-> object create_license(api_key, new_license)
+> object create_license(new_license)
 
 Create a license
 
@@ -19,29 +19,43 @@ Use this method to create a new license.
 
 ### Example
 
+* Api Key Authentication (bearer):
 ```python
 from __future__ import print_function
 import time
 import kloudio
 from kloudio.rest import ApiException
 from pprint import pprint
-# Defining the host is optional and defaults to http://localhost
+# Defining the host is optional and defaults to http://localhost:8089
 # See configuration.py for a list of all supported configuration parameters.
 configuration = kloudio.Configuration(
-    host = "http://localhost"
+    host = "http://localhost:8089"
 )
 
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure API key authorization: bearer
+configuration = kloudio.Configuration(
+    host = "http://localhost:8089",
+    api_key = {
+        'bearer': 'YOUR_API_KEY'
+    }
+)
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['bearer'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-with kloudio.ApiClient() as api_client:
+with kloudio.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = kloudio.LicenseApi(api_client)
-    api_key = 'api_key_example' # str | Enter your API key here
-new_license = kloudio.NewLicense() # NewLicense | 
+    new_license = kloudio.NewLicense() # NewLicense | 
 
     try:
         # Create a license
-        api_response = api_instance.create_license(api_key, new_license)
+        api_response = api_instance.create_license(new_license)
         pprint(api_response)
     except ApiException as e:
         print("Exception when calling LicenseApi->create_license: %s\n" % e)
@@ -51,7 +65,6 @@ new_license = kloudio.NewLicense() # NewLicense |
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **api_key** | **str**| Enter your API key here | 
  **new_license** | [**NewLicense**](NewLicense.md)|  | 
 
 ### Return type
@@ -60,7 +73,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[bearer](../README.md#bearer)
 
 ### HTTP request headers
 
@@ -78,7 +91,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **delete_license**
-> object delete_license(api_key, account_id, license_id)
+> object delete_license(account_id, license_id)
 
 Delete a license
 
@@ -86,30 +99,44 @@ Use this method to delete a license.
 
 ### Example
 
+* Api Key Authentication (bearer):
 ```python
 from __future__ import print_function
 import time
 import kloudio
 from kloudio.rest import ApiException
 from pprint import pprint
-# Defining the host is optional and defaults to http://localhost
+# Defining the host is optional and defaults to http://localhost:8089
 # See configuration.py for a list of all supported configuration parameters.
 configuration = kloudio.Configuration(
-    host = "http://localhost"
+    host = "http://localhost:8089"
 )
 
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure API key authorization: bearer
+configuration = kloudio.Configuration(
+    host = "http://localhost:8089",
+    api_key = {
+        'bearer': 'YOUR_API_KEY'
+    }
+)
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['bearer'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-with kloudio.ApiClient() as api_client:
+with kloudio.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = kloudio.LicenseApi(api_client)
-    api_key = 'api_key_example' # str | Enter your API key here
-account_id = 3.4 # float | 
+    account_id = 3.4 # float | 
 license_id = 3.4 # float | 
 
     try:
         # Delete a license
-        api_response = api_instance.delete_license(api_key, account_id, license_id)
+        api_response = api_instance.delete_license(account_id, license_id)
         pprint(api_response)
     except ApiException as e:
         print("Exception when calling LicenseApi->delete_license: %s\n" % e)
@@ -119,7 +146,6 @@ license_id = 3.4 # float |
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **api_key** | **str**| Enter your API key here | 
  **account_id** | **float**|  | 
  **license_id** | **float**|  | 
 
@@ -129,7 +155,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[bearer](../README.md#bearer)
 
 ### HTTP request headers
 
@@ -147,7 +173,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_licenses**
-> object get_licenses(api_key)
+> object get_licenses()
 
 Get all licenses
 
@@ -155,38 +181,49 @@ Use this method to get all licenses.
 
 ### Example
 
+* Api Key Authentication (bearer):
 ```python
 from __future__ import print_function
 import time
 import kloudio
 from kloudio.rest import ApiException
 from pprint import pprint
-# Defining the host is optional and defaults to http://localhost
+# Defining the host is optional and defaults to http://localhost:8089
 # See configuration.py for a list of all supported configuration parameters.
 configuration = kloudio.Configuration(
-    host = "http://localhost"
+    host = "http://localhost:8089"
 )
 
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure API key authorization: bearer
+configuration = kloudio.Configuration(
+    host = "http://localhost:8089",
+    api_key = {
+        'bearer': 'YOUR_API_KEY'
+    }
+)
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['bearer'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-with kloudio.ApiClient() as api_client:
+with kloudio.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = kloudio.LicenseApi(api_client)
-    api_key = 'api_key_example' # str | Enter your API key here
-
+    
     try:
         # Get all licenses
-        api_response = api_instance.get_licenses(api_key)
+        api_response = api_instance.get_licenses()
         pprint(api_response)
     except ApiException as e:
         print("Exception when calling LicenseApi->get_licenses: %s\n" % e)
 ```
 
 ### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **api_key** | **str**| Enter your API key here | 
+This endpoint does not need any parameter.
 
 ### Return type
 
@@ -194,7 +231,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[bearer](../README.md#bearer)
 
 ### HTTP request headers
 
@@ -212,7 +249,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **update_license**
-> object update_license(api_key, new_license)
+> object update_license(new_license)
 
 Update a license
 
@@ -220,29 +257,43 @@ Use this method to update a license.
 
 ### Example
 
+* Api Key Authentication (bearer):
 ```python
 from __future__ import print_function
 import time
 import kloudio
 from kloudio.rest import ApiException
 from pprint import pprint
-# Defining the host is optional and defaults to http://localhost
+# Defining the host is optional and defaults to http://localhost:8089
 # See configuration.py for a list of all supported configuration parameters.
 configuration = kloudio.Configuration(
-    host = "http://localhost"
+    host = "http://localhost:8089"
 )
 
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure API key authorization: bearer
+configuration = kloudio.Configuration(
+    host = "http://localhost:8089",
+    api_key = {
+        'bearer': 'YOUR_API_KEY'
+    }
+)
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['bearer'] = 'Bearer'
 
 # Enter a context with an instance of the API client
-with kloudio.ApiClient() as api_client:
+with kloudio.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = kloudio.LicenseApi(api_client)
-    api_key = 'api_key_example' # str | Enter your API key here
-new_license = kloudio.NewLicense() # NewLicense | 
+    new_license = kloudio.NewLicense() # NewLicense | 
 
     try:
         # Update a license
-        api_response = api_instance.update_license(api_key, new_license)
+        api_response = api_instance.update_license(new_license)
         pprint(api_response)
     except ApiException as e:
         print("Exception when calling LicenseApi->update_license: %s\n" % e)
@@ -252,7 +303,6 @@ new_license = kloudio.NewLicense() # NewLicense |
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **api_key** | **str**| Enter your API key here | 
  **new_license** | [**NewLicense**](NewLicense.md)|  | 
 
 ### Return type
@@ -261,7 +311,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[bearer](../README.md#bearer)
 
 ### HTTP request headers
 
