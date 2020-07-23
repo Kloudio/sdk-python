@@ -161,18 +161,16 @@ class LicenseApi(object):
             collection_formats=collection_formats,
             _request_auth=local_var_params.get('_request_auth'))
 
-    def delete_license(self, account_id, license_id, **kwargs):  # noqa: E501
+    def delete_license(self, license_id, **kwargs):  # noqa: E501
         """Delete a license  # noqa: E501
 
         Use this method to delete a license.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.delete_license(account_id, license_id, async_req=True)
+        >>> thread = api.delete_license(license_id, async_req=True)
         >>> result = thread.get()
 
-        :param account_id: (required)
-        :type account_id: float
         :param license_id: (required)
         :type license_id: float
         :param async_req: Whether to execute the request asynchronously.
@@ -191,20 +189,18 @@ class LicenseApi(object):
         :rtype: object
         """
         kwargs['_return_http_data_only'] = True
-        return self.delete_license_with_http_info(account_id, license_id, **kwargs)  # noqa: E501
+        return self.delete_license_with_http_info(license_id, **kwargs)  # noqa: E501
 
-    def delete_license_with_http_info(self, account_id, license_id, **kwargs):  # noqa: E501
+    def delete_license_with_http_info(self, license_id, **kwargs):  # noqa: E501
         """Delete a license  # noqa: E501
 
         Use this method to delete a license.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.delete_license_with_http_info(account_id, license_id, async_req=True)
+        >>> thread = api.delete_license_with_http_info(license_id, async_req=True)
         >>> result = thread.get()
 
-        :param account_id: (required)
-        :type account_id: float
         :param license_id: (required)
         :type license_id: float
         :param async_req: Whether to execute the request asynchronously.
@@ -233,7 +229,6 @@ class LicenseApi(object):
         local_var_params = locals()
 
         all_params = [
-            'account_id',
             'license_id'
         ]
         all_params.extend(
@@ -254,10 +249,6 @@ class LicenseApi(object):
                 )
             local_var_params[key] = val
         del local_var_params['kwargs']
-        # verify the required parameter 'account_id' is set
-        if self.api_client.client_side_validation and ('account_id' not in local_var_params or  # noqa: E501
-                                                        local_var_params['account_id'] is None):  # noqa: E501
-            raise ApiValueError("Missing the required parameter `account_id` when calling `delete_license`")  # noqa: E501
         # verify the required parameter 'license_id' is set
         if self.api_client.client_side_validation and ('license_id' not in local_var_params or  # noqa: E501
                                                         local_var_params['license_id'] is None):  # noqa: E501
@@ -266,8 +257,6 @@ class LicenseApi(object):
         collection_formats = {}
 
         path_params = {}
-        if 'account_id' in local_var_params:
-            path_params['account_id'] = local_var_params['account_id']  # noqa: E501
         if 'license_id' in local_var_params:
             path_params['license_id'] = local_var_params['license_id']  # noqa: E501
 
@@ -287,7 +276,7 @@ class LicenseApi(object):
         auth_settings = ['bearer']  # noqa: E501
 
         return self.api_client.call_api(
-            '/v1/license/{account_id}/{license_id}', 'DELETE',
+            '/v1/license/{license_id}', 'DELETE',
             path_params,
             query_params,
             header_params,

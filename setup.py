@@ -9,7 +9,7 @@
 from setuptools import setup, find_packages  # noqa: H301
 
 NAME = "Kloudio"
-VERSION = "0.2.6"
+VERSION = "0.3.7"
 AUTHOR = "Kloudio"
 AUTHOR_EMAIL = "developer@kloud.io"
 # To install the library, run the following
@@ -37,7 +37,7 @@ setup(
     # Kloudio Python Library
 
 - API version: BETA
-- Package version: 0.2.6
+- Package version: 0.3.7
 
 ## Requirements.
 

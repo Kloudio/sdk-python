@@ -4,6 +4,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **first_name** | **str** | First name | 
+**id** | **float** |  | 
 **last_name** | **str** |  | 
 **email** | **str** |  | 
 **role** | **str** |  | 

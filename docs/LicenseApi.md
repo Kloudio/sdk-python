@@ -5,7 +5,7 @@ All URIs are relative to *http://localhost:8089*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**create_license**](LicenseApi.md#create_license) | **POST** /v1/license | Create a license
-[**delete_license**](LicenseApi.md#delete_license) | **DELETE** /v1/license/{account_id}/{license_id} | Delete a license
+[**delete_license**](LicenseApi.md#delete_license) | **DELETE** /v1/license/{license_id} | Delete a license
 [**get_licenses**](LicenseApi.md#get_licenses) | **GET** /v1/license | Get all licenses
 [**update_license**](LicenseApi.md#update_license) | **PUT** /v1/license | Update a license
 
@@ -91,7 +91,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **delete_license**
-> object delete_license(account_id, license_id)
+> object delete_license(license_id)
 
 Delete a license
 
@@ -131,12 +131,11 @@ configuration = kloudio.Configuration(
 with kloudio.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = kloudio.LicenseApi(api_client)
-    account_id = 3.4 # float | 
-license_id = 3.4 # float | 
+    license_id = 3.4 # float | 
 
     try:
         # Delete a license
-        api_response = api_instance.delete_license(account_id, license_id)
+        api_response = api_instance.delete_license(license_id)
         pprint(api_response)
     except ApiException as e:
         print("Exception when calling LicenseApi->delete_license: %s\n" % e)
@@ -146,7 +145,6 @@ license_id = 3.4 # float |
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **account_id** | **float**|  | 
  **license_id** | **float**|  | 
 
 ### Return type

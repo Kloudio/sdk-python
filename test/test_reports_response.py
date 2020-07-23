@@ -33,6 +33,7 @@ class TestReportsResponse(unittest.TestCase):
         if include_optional :
             return ReportsResponse(
                 name = 'mysql-report', 
+                id = 'LPdqQW-Kri0ZfU1a', 
                 connection_id = 'LPdqQW-Kri0ZfU1a', 
                 description = 'This is a sample query', 
                 db_query = 'SELECT * FROM users;', 
@@ -63,6 +64,7 @@ class TestReportsResponse(unittest.TestCase):
         else :
             return ReportsResponse(
                 name = 'mysql-report',
+                id = 'LPdqQW-Kri0ZfU1a',
                 connection_id = 'LPdqQW-Kri0ZfU1a',
         )
 

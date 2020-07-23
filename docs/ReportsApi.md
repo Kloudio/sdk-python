@@ -174,7 +174,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **execute_report**
-> execute_report(report_id, run_report)
+> object execute_report(report_id, run_report)
 
 Execute a report
 
@@ -219,7 +219,8 @@ run_report = kloudio.RunReport() # RunReport |
 
     try:
         # Execute a report
-        api_instance.execute_report(report_id, run_report)
+        api_response = api_instance.execute_report(report_id, run_report)
+        pprint(api_response)
     except ApiException as e:
         print("Exception when calling ReportsApi->execute_report: %s\n" % e)
 ```
@@ -233,7 +234,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-void (empty response body)
+**object**
 
 ### Authorization
 
@@ -247,7 +248,7 @@ void (empty response body)
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | OK |  -  |
+**201** | OK |  -  |
 **400** | Bad request, check message for more information on the error |  -  |
 **401** | Unauthorized, check your API key |  -  |
 **403** | Forbidden, possible CORS error |  -  |

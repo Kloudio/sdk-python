@@ -33,6 +33,7 @@ class TestNewLicense(unittest.TestCase):
         if include_optional :
             return NewLicense(
                 first_name = 'John', 
+                id = 3995, 
                 last_name = 'Doe', 
                 email = 'admin@kloud.io', 
                 role = 'creator | viewer'
@@ -40,6 +41,7 @@ class TestNewLicense(unittest.TestCase):
         else :
             return NewLicense(
                 first_name = 'John',
+                id = 3995,
                 last_name = 'Doe',
                 email = 'admin@kloud.io',
                 role = 'creator | viewer',

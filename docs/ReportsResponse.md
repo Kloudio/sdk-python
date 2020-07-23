@@ -4,6 +4,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **name** | **str** |  | 
+**id** | **str** |  | 
 **connection_id** | **str** |  | 
 **description** | **str** |  | [optional] 
 **db_query** | **str** |  | [optional] 

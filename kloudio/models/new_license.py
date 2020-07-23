@@ -27,6 +27,7 @@ class NewLicense(object):
     """
     openapi_types = {
         'first_name': 'str',
+        'id': 'float',
         'last_name': 'str',
         'email': 'str',
         'role': 'str'
@@ -34,24 +35,27 @@ class NewLicense(object):
 
     attribute_map = {
         'first_name': 'firstName',
+        'id': 'id',
         'last_name': 'lastName',
         'email': 'email',
         'role': 'role'
     }
 
-    def __init__(self, first_name=None, last_name=None, email=None, role=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, first_name=None, id=None, last_name=None, email=None, role=None, local_vars_configuration=None):  # noqa: E501
         """NewLicense - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
         self._first_name = None
+        self._id = None
         self._last_name = None
         self._email = None
         self._role = None
         self.discriminator = None
 
         self.first_name = first_name
+        self.id = id
         self.last_name = last_name
         self.email = email
         self.role = role
@@ -80,6 +84,29 @@ class NewLicense(object):
             raise ValueError("Invalid value for `first_name`, must not be `None`")  # noqa: E501
 
         self._first_name = first_name
+
+    @property
+    def id(self):
+        """Gets the id of this NewLicense.  # noqa: E501
+
+
+        :return: The id of this NewLicense.  # noqa: E501
+        :rtype: float
+        """
+        return self._id
+
+    @id.setter
+    def id(self, id):
+        """Sets the id of this NewLicense.
+
+
+        :param id: The id of this NewLicense.  # noqa: E501
+        :type id: float
+        """
+        if self.local_vars_configuration.client_side_validation and id is None:  # noqa: E501
+            raise ValueError("Invalid value for `id`, must not be `None`")  # noqa: E501
+
+        self._id = id
 
     @property
     def last_name(self):

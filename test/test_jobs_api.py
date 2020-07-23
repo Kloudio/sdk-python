@@ -24,6 +24,13 @@ class TestJobsApi(unittest.TestCase):
     def tearDown(self):
         pass
 
+    def test_create_job(self):
+        """Test case for create_job
+
+        Create a job  # noqa: E501
+        """
+        pass
+
     def test_delete_job(self):
         """Test case for delete_job
 
@@ -45,45 +52,24 @@ class TestJobsApi(unittest.TestCase):
         """
         pass
 
-    def test_get_job(self):
-        """Test case for get_job
-
-        Get a job  # noqa: E501
-        """
-        pass
-
-    def test_jobs_controller_create_job(self):
-        """Test case for jobs_controller_create_job
-
-        Create a job  # noqa: E501
-        """
-        pass
-
-    def test_jobs_controller_get_jobs(self):
-        """Test case for jobs_controller_get_jobs
-
-        Get all jobs  # noqa: E501
-        """
-        pass
-
-    def test_jobs_controller_resume_job(self):
-        """Test case for jobs_controller_resume_job
+    def test_resume_jobs(self):
+        """Test case for resume_jobs
 
         Resume jobs  # noqa: E501
         """
         pass
 
-    def test_jobs_controller_suspend_job(self):
-        """Test case for jobs_controller_suspend_job
+    def test_retrieve_job(self):
+        """Test case for retrieve_job
 
-        Suspend jobs  # noqa: E501
+        Get a job  # noqa: E501
         """
         pass
 
-    def test_jobs_controller_update_job(self):
-        """Test case for jobs_controller_update_job
+    def test_retrieve_jobs(self):
+        """Test case for retrieve_jobs
 
-        Update a job  # noqa: E501
+        Get all jobs  # noqa: E501
         """
         pass
 
@@ -91,6 +77,20 @@ class TestJobsApi(unittest.TestCase):
         """Test case for run_job
 
         Run a job  # noqa: E501
+        """
+        pass
+
+    def test_suspend_jobs(self):
+        """Test case for suspend_jobs
+
+        Suspend jobs  # noqa: E501
+        """
+        pass
+
+    def test_update_job(self):
+        """Test case for update_job
+
+        Update a job  # noqa: E501
         """
         pass
 

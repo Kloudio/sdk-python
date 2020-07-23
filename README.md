@@ -85,18 +85,18 @@ Class | Method | HTTP request | Description
 *ConnectionsApi* | [**retrieve_connections**](docs/ConnectionsApi.md#retrieve_connections) | **GET** /v1/connections | Get all connections
 *ConnectionsApi* | [**share_connection**](docs/ConnectionsApi.md#share_connection) | **POST** /v1/connections/share/{connection_id} | Share a connection
 *ConnectionsApi* | [**update_connection**](docs/ConnectionsApi.md#update_connection) | **PUT** /v1/connections/{connection_id} | Update a connection
+*JobsApi* | [**create_job**](docs/JobsApi.md#create_job) | **POST** /v1/jobs | Create a job
 *JobsApi* | [**delete_job**](docs/JobsApi.md#delete_job) | **DELETE** /v1/jobs/{job_id} | Delete a job
 *JobsApi* | [**disable_job**](docs/JobsApi.md#disable_job) | **POST** /v1/jobs/{job_id}/disable | Disable a job
 *JobsApi* | [**enable_job**](docs/JobsApi.md#enable_job) | **POST** /v1/jobs/{job_id}/enable | Enable a job
-*JobsApi* | [**get_job**](docs/JobsApi.md#get_job) | **GET** /v1/jobs/{job_id} | Get a job
-*JobsApi* | [**jobs_controller_create_job**](docs/JobsApi.md#jobs_controller_create_job) | **POST** /v1/jobs | Create a job
-*JobsApi* | [**jobs_controller_get_jobs**](docs/JobsApi.md#jobs_controller_get_jobs) | **GET** /v1/jobs | Get all jobs
-*JobsApi* | [**jobs_controller_resume_job**](docs/JobsApi.md#jobs_controller_resume_job) | **POST** /v1/jobs/resume | Resume jobs
-*JobsApi* | [**jobs_controller_suspend_job**](docs/JobsApi.md#jobs_controller_suspend_job) | **POST** /v1/jobs/suspend | Suspend jobs
-*JobsApi* | [**jobs_controller_update_job**](docs/JobsApi.md#jobs_controller_update_job) | **PUT** /v1/jobs | Update a job
+*JobsApi* | [**resume_jobs**](docs/JobsApi.md#resume_jobs) | **POST** /v1/jobs/resume | Resume jobs
+*JobsApi* | [**retrieve_job**](docs/JobsApi.md#retrieve_job) | **GET** /v1/jobs/{job_id} | Get a job
+*JobsApi* | [**retrieve_jobs**](docs/JobsApi.md#retrieve_jobs) | **GET** /v1/jobs | Get all jobs
 *JobsApi* | [**run_job**](docs/JobsApi.md#run_job) | **POST** /v1/jobs/{job_id}/run | Run a job
+*JobsApi* | [**suspend_jobs**](docs/JobsApi.md#suspend_jobs) | **POST** /v1/jobs/suspend | Suspend jobs
+*JobsApi* | [**update_job**](docs/JobsApi.md#update_job) | **PUT** /v1/jobs | Update a job
 *LicenseApi* | [**create_license**](docs/LicenseApi.md#create_license) | **POST** /v1/license | Create a license
-*LicenseApi* | [**delete_license**](docs/LicenseApi.md#delete_license) | **DELETE** /v1/license/{account_id}/{license_id} | Delete a license
+*LicenseApi* | [**delete_license**](docs/LicenseApi.md#delete_license) | **DELETE** /v1/license/{license_id} | Delete a license
 *LicenseApi* | [**get_licenses**](docs/LicenseApi.md#get_licenses) | **GET** /v1/license | Get all licenses
 *LicenseApi* | [**update_license**](docs/LicenseApi.md#update_license) | **PUT** /v1/license | Update a license
 *RegisterApi* | [**register_user**](docs/RegisterApi.md#register_user) | **POST** /v1/register | Register a user

@@ -27,6 +27,7 @@ class ReportsResponse(object):
     """
     openapi_types = {
         'name': 'str',
+        'id': 'str',
         'connection_id': 'str',
         'description': 'str',
         'db_query': 'str',
@@ -57,6 +58,7 @@ class ReportsResponse(object):
 
     attribute_map = {
         'name': 'name',
+        'id': 'id',
         'connection_id': 'connectionId',
         'description': 'description',
         'db_query': 'dbQuery',
@@ -85,13 +87,14 @@ class ReportsResponse(object):
         'domain': 'domain'
     }
 
-    def __init__(self, name=None, connection_id=None, description=None, db_query=None, db_table=None, sql_mode=None, connection_type=None, _query_params=None, selected_cols=None, available_cols=None, shared_with=None, db_schema=None, tags=None, db_database=None, joins=None, custom_join=None, additional_info=None, join_tables=None, settings=None, model=None, integration_id=None, user_id=None, updated_at=None, created_at=None, query_version=None, db_type=None, domain=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, name=None, id=None, connection_id=None, description=None, db_query=None, db_table=None, sql_mode=None, connection_type=None, _query_params=None, selected_cols=None, available_cols=None, shared_with=None, db_schema=None, tags=None, db_database=None, joins=None, custom_join=None, additional_info=None, join_tables=None, settings=None, model=None, integration_id=None, user_id=None, updated_at=None, created_at=None, query_version=None, db_type=None, domain=None, local_vars_configuration=None):  # noqa: E501
         """ReportsResponse - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
         self._name = None
+        self._id = None
         self._connection_id = None
         self._description = None
         self._db_query = None
@@ -121,6 +124,7 @@ class ReportsResponse(object):
         self.discriminator = None
 
         self.name = name
+        self.id = id
         self.connection_id = connection_id
         if description is not None:
             self.description = description
@@ -195,6 +199,29 @@ class ReportsResponse(object):
             raise ValueError("Invalid value for `name`, must not be `None`")  # noqa: E501
 
         self._name = name
+
+    @property
+    def id(self):
+        """Gets the id of this ReportsResponse.  # noqa: E501
+
+
+        :return: The id of this ReportsResponse.  # noqa: E501
+        :rtype: str
+        """
+        return self._id
+
+    @id.setter
+    def id(self, id):
+        """Sets the id of this ReportsResponse.
+
+
+        :param id: The id of this ReportsResponse.  # noqa: E501
+        :type id: str
+        """
+        if self.local_vars_configuration.client_side_validation and id is None:  # noqa: E501
+            raise ValueError("Invalid value for `id`, must not be `None`")  # noqa: E501
+
+        self._id = id
 
     @property
     def connection_id(self):
