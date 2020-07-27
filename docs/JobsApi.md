@@ -337,11 +337,11 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **resume_jobs**
-> object resume_jobs(job_array)
+> object resume_jobs(jobs_array)
 
 Resume jobs
 
-Use this method to suspend jobs.
+Use this method to resume jobs.
 
 ### Example
 
@@ -377,11 +377,11 @@ configuration = kloudio.Configuration(
 with kloudio.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = kloudio.JobsApi(api_client)
-    job_array = kloudio.JobArray() # JobArray | To resume a job, pass an array of the job IDs.
+    jobs_array = kloudio.JobsArray() # JobsArray | To resume a job, pass an array of the job IDs.
 
     try:
         # Resume jobs
-        api_response = api_instance.resume_jobs(job_array)
+        api_response = api_instance.resume_jobs(jobs_array)
         pprint(api_response)
     except ApiException as e:
         print("Exception when calling JobsApi->resume_jobs: %s\n" % e)
@@ -391,7 +391,7 @@ with kloudio.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **job_array** | [**JobArray**](JobArray.md)| To resume a job, pass an array of the job IDs. | 
+ **jobs_array** | [**JobsArray**](JobsArray.md)| To resume a job, pass an array of the job IDs. | 
 
 ### Return type
 
@@ -651,7 +651,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **suspend_jobs**
-> object suspend_jobs(job_array)
+> object suspend_jobs(jobs_array)
 
 Suspend jobs
 
@@ -691,11 +691,11 @@ configuration = kloudio.Configuration(
 with kloudio.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = kloudio.JobsApi(api_client)
-    job_array = kloudio.JobArray() # JobArray | To suspend a job, pass an array of the job IDs.
+    jobs_array = kloudio.JobsArray() # JobsArray | To suspend a job, pass an array of the job IDs.
 
     try:
         # Suspend jobs
-        api_response = api_instance.suspend_jobs(job_array)
+        api_response = api_instance.suspend_jobs(jobs_array)
         pprint(api_response)
     except ApiException as e:
         print("Exception when calling JobsApi->suspend_jobs: %s\n" % e)
@@ -705,7 +705,7 @@ with kloudio.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **job_array** | [**JobArray**](JobArray.md)| To suspend a job, pass an array of the job IDs. | 
+ **jobs_array** | [**JobsArray**](JobsArray.md)| To suspend a job, pass an array of the job IDs. | 
 
 ### Return type
 

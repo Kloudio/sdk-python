@@ -115,7 +115,7 @@ Class | Method | HTTP request | Description
  - [ConnectionRespose](docs/ConnectionRespose.md)
  - [ConnectionShareResponse](docs/ConnectionShareResponse.md)
  - [ErrorResponse](docs/ErrorResponse.md)
- - [JobArray](docs/JobArray.md)
+ - [JobsArray](docs/JobsArray.md)
  - [NewConnection](docs/NewConnection.md)
  - [NewJob](docs/NewJob.md)
  - [NewLicense](docs/NewLicense.md)
@@ -128,6 +128,7 @@ Class | Method | HTTP request | Description
  - [ShareConnection](docs/ShareConnection.md)
  - [ShareReport](docs/ShareReport.md)
  - [UpdateConnection](docs/UpdateConnection.md)
+ - [UpdateLicense](docs/UpdateLicense.md)
 
 
 ## Documentation For Authorization

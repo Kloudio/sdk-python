@@ -106,8 +106,7 @@ class NewConnection(object):
         self.username = username
         self.password = password
         self.connection_type = connection_type
-        if db_type is not None:
-            self.db_type = db_type
+        self.db_type = db_type
         if production is not None:
             self.production = production
         if ssl is not None:
@@ -137,6 +136,7 @@ class NewConnection(object):
     def name(self):
         """Gets the name of this NewConnection.  # noqa: E501
 
+        The name of the connection, has to be unique for each user, cannot start with numeric characters.  # noqa: E501
 
         :return: The name of this NewConnection.  # noqa: E501
         :rtype: str
@@ -147,6 +147,7 @@ class NewConnection(object):
     def name(self, name):
         """Sets the name of this NewConnection.
 
+        The name of the connection, has to be unique for each user, cannot start with numeric characters.  # noqa: E501
 
         :param name: The name of this NewConnection.  # noqa: E501
         :type name: str
@@ -160,6 +161,7 @@ class NewConnection(object):
     def host(self):
         """Gets the host of this NewConnection.  # noqa: E501
 
+        Host of the connection. To use localhost, please install Kloudio Gateway.  # noqa: E501
 
         :return: The host of this NewConnection.  # noqa: E501
         :rtype: str
@@ -170,6 +172,7 @@ class NewConnection(object):
     def host(self, host):
         """Sets the host of this NewConnection.
 
+        Host of the connection. To use localhost, please install Kloudio Gateway.  # noqa: E501
 
         :param host: The host of this NewConnection.  # noqa: E501
         :type host: str
@@ -183,6 +186,7 @@ class NewConnection(object):
     def port(self):
         """Gets the port of this NewConnection.  # noqa: E501
 
+        Port for the connection  # noqa: E501
 
         :return: The port of this NewConnection.  # noqa: E501
         :rtype: str
@@ -193,6 +197,7 @@ class NewConnection(object):
     def port(self, port):
         """Sets the port of this NewConnection.
 
+        Port for the connection  # noqa: E501
 
         :param port: The port of this NewConnection.  # noqa: E501
         :type port: str
@@ -206,6 +211,7 @@ class NewConnection(object):
     def database(self):
         """Gets the database of this NewConnection.  # noqa: E501
 
+        Database name  # noqa: E501
 
         :return: The database of this NewConnection.  # noqa: E501
         :rtype: str
@@ -216,6 +222,7 @@ class NewConnection(object):
     def database(self, database):
         """Sets the database of this NewConnection.
 
+        Database name  # noqa: E501
 
         :param database: The database of this NewConnection.  # noqa: E501
         :type database: str
@@ -229,6 +236,7 @@ class NewConnection(object):
     def username(self):
         """Gets the username of this NewConnection.  # noqa: E501
 
+        Username used for authentication  # noqa: E501
 
         :return: The username of this NewConnection.  # noqa: E501
         :rtype: str
@@ -239,6 +247,7 @@ class NewConnection(object):
     def username(self, username):
         """Sets the username of this NewConnection.
 
+        Username used for authentication  # noqa: E501
 
         :param username: The username of this NewConnection.  # noqa: E501
         :type username: str
@@ -252,6 +261,7 @@ class NewConnection(object):
     def password(self):
         """Gets the password of this NewConnection.  # noqa: E501
 
+        Password used for authentication  # noqa: E501
 
         :return: The password of this NewConnection.  # noqa: E501
         :rtype: str
@@ -262,6 +272,7 @@ class NewConnection(object):
     def password(self, password):
         """Sets the password of this NewConnection.
 
+        Password used for authentication  # noqa: E501
 
         :param password: The password of this NewConnection.  # noqa: E501
         :type password: str
@@ -275,6 +286,7 @@ class NewConnection(object):
     def connection_type(self):
         """Gets the connection_type of this NewConnection.  # noqa: E501
 
+        Accepted values: CUSTOMERSUCCESS,PAYMENT,CRM,SOCIAL,NOSQL,CLOUDSTORAGE,WEB,FINANCE,DATABASE,ECOMMERCE,AUTOMATION,ERP  # noqa: E501
 
         :return: The connection_type of this NewConnection.  # noqa: E501
         :rtype: str
@@ -285,6 +297,7 @@ class NewConnection(object):
     def connection_type(self, connection_type):
         """Sets the connection_type of this NewConnection.
 
+        Accepted values: CUSTOMERSUCCESS,PAYMENT,CRM,SOCIAL,NOSQL,CLOUDSTORAGE,WEB,FINANCE,DATABASE,ECOMMERCE,AUTOMATION,ERP  # noqa: E501
 
         :param connection_type: The connection_type of this NewConnection.  # noqa: E501
         :type connection_type: str
@@ -298,6 +311,7 @@ class NewConnection(object):
     def db_type(self):
         """Gets the db_type of this NewConnection.  # noqa: E501
 
+        Accepted values: MSSQL,INTERCOM,STRIPE,FACEBOOKPAGES,S4HANA,AIRTABLE,SHOPIFY,FRESHSUCCESS,HUBSPOT,ORACLEFINANCIALSCLOUD,FACEBOOKADS,MYSQL,ORACLE,PGSQL,SALESFORCE,SNOWFLAKE,QUICKBOOKSDESKTOP,GITHUB,SQUARE,QUICKBOOKS,SMARTSHEET,MONGODB,NETSUITE,AZURESQL,XERO,ZAPIER,ZENDESKCHAT,GOOGLEADWORDS,GOOGLEADMANAGER,BIGQUERY,AWSATHENA,DYNAMODB,MARIADB,CUSTOMAPI,JIRA,REDSHIFT,ZENDESKSUPPORT,OUTREACH,ANAPLAN,GOOGLEDRIVE,DROPBOX,AMAZONS3,DATABRICKS  # noqa: E501
 
         :return: The db_type of this NewConnection.  # noqa: E501
         :rtype: str
@@ -308,10 +322,13 @@ class NewConnection(object):
     def db_type(self, db_type):
         """Sets the db_type of this NewConnection.
 
+        Accepted values: MSSQL,INTERCOM,STRIPE,FACEBOOKPAGES,S4HANA,AIRTABLE,SHOPIFY,FRESHSUCCESS,HUBSPOT,ORACLEFINANCIALSCLOUD,FACEBOOKADS,MYSQL,ORACLE,PGSQL,SALESFORCE,SNOWFLAKE,QUICKBOOKSDESKTOP,GITHUB,SQUARE,QUICKBOOKS,SMARTSHEET,MONGODB,NETSUITE,AZURESQL,XERO,ZAPIER,ZENDESKCHAT,GOOGLEADWORDS,GOOGLEADMANAGER,BIGQUERY,AWSATHENA,DYNAMODB,MARIADB,CUSTOMAPI,JIRA,REDSHIFT,ZENDESKSUPPORT,OUTREACH,ANAPLAN,GOOGLEDRIVE,DROPBOX,AMAZONS3,DATABRICKS  # noqa: E501
 
         :param db_type: The db_type of this NewConnection.  # noqa: E501
         :type db_type: str
         """
+        if self.local_vars_configuration.client_side_validation and db_type is None:  # noqa: E501
+            raise ValueError("Invalid value for `db_type`, must not be `None`")  # noqa: E501
 
         self._db_type = db_type
 

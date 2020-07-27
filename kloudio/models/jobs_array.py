@@ -14,7 +14,7 @@ import six
 from kloudio.configuration import Configuration
 
 
-class JobArray(object):
+class JobsArray(object):
     """
     """
 
@@ -26,7 +26,7 @@ class JobArray(object):
                             and the value is json key in definition.
     """
     openapi_types = {
-        'job_ids': 'object'
+        'job_ids': 'list[str]'
     }
 
     attribute_map = {
@@ -34,7 +34,7 @@ class JobArray(object):
     }
 
     def __init__(self, job_ids=None, local_vars_configuration=None):  # noqa: E501
-        """JobArray - a model defined in OpenAPI"""  # noqa: E501
+        """JobsArray - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
@@ -46,21 +46,21 @@ class JobArray(object):
 
     @property
     def job_ids(self):
-        """Gets the job_ids of this JobArray.  # noqa: E501
+        """Gets the job_ids of this JobsArray.  # noqa: E501
 
 
-        :return: The job_ids of this JobArray.  # noqa: E501
-        :rtype: object
+        :return: The job_ids of this JobsArray.  # noqa: E501
+        :rtype: list[str]
         """
         return self._job_ids
 
     @job_ids.setter
     def job_ids(self, job_ids):
-        """Sets the job_ids of this JobArray.
+        """Sets the job_ids of this JobsArray.
 
 
-        :param job_ids: The job_ids of this JobArray.  # noqa: E501
-        :type job_ids: object
+        :param job_ids: The job_ids of this JobsArray.  # noqa: E501
+        :type job_ids: list[str]
         """
         if self.local_vars_configuration.client_side_validation and job_ids is None:  # noqa: E501
             raise ValueError("Invalid value for `job_ids`, must not be `None`")  # noqa: E501
@@ -101,14 +101,14 @@ class JobArray(object):
 
     def __eq__(self, other):
         """Returns true if both objects are equal"""
-        if not isinstance(other, JobArray):
+        if not isinstance(other, JobsArray):
             return False
 
         return self.to_dict() == other.to_dict()
 
     def __ne__(self, other):
         """Returns true if both objects are not equal"""
-        if not isinstance(other, JobArray):
+        if not isinstance(other, JobsArray):
             return True
 
         return self.to_dict() != other.to_dict()

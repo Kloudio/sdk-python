@@ -412,18 +412,18 @@ class LicenseApi(object):
             collection_formats=collection_formats,
             _request_auth=local_var_params.get('_request_auth'))
 
-    def update_license(self, new_license, **kwargs):  # noqa: E501
+    def update_license(self, update_license, **kwargs):  # noqa: E501
         """Update a license  # noqa: E501
 
         Use this method to update a license.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.update_license(new_license, async_req=True)
+        >>> thread = api.update_license(update_license, async_req=True)
         >>> result = thread.get()
 
-        :param new_license: (required)
-        :type new_license: NewLicense
+        :param update_license: (required)
+        :type update_license: UpdateLicense
         :param async_req: Whether to execute the request asynchronously.
         :type async_req: bool, optional
         :param _preload_content: if False, the urllib3.HTTPResponse object will
@@ -440,20 +440,20 @@ class LicenseApi(object):
         :rtype: object
         """
         kwargs['_return_http_data_only'] = True
-        return self.update_license_with_http_info(new_license, **kwargs)  # noqa: E501
+        return self.update_license_with_http_info(update_license, **kwargs)  # noqa: E501
 
-    def update_license_with_http_info(self, new_license, **kwargs):  # noqa: E501
+    def update_license_with_http_info(self, update_license, **kwargs):  # noqa: E501
         """Update a license  # noqa: E501
 
         Use this method to update a license.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.update_license_with_http_info(new_license, async_req=True)
+        >>> thread = api.update_license_with_http_info(update_license, async_req=True)
         >>> result = thread.get()
 
-        :param new_license: (required)
-        :type new_license: NewLicense
+        :param update_license: (required)
+        :type update_license: UpdateLicense
         :param async_req: Whether to execute the request asynchronously.
         :type async_req: bool, optional
         :param _return_http_data_only: response data without head status code
@@ -480,7 +480,7 @@ class LicenseApi(object):
         local_var_params = locals()
 
         all_params = [
-            'new_license'
+            'update_license'
         ]
         all_params.extend(
             [
@@ -500,10 +500,10 @@ class LicenseApi(object):
                 )
             local_var_params[key] = val
         del local_var_params['kwargs']
-        # verify the required parameter 'new_license' is set
-        if self.api_client.client_side_validation and ('new_license' not in local_var_params or  # noqa: E501
-                                                        local_var_params['new_license'] is None):  # noqa: E501
-            raise ApiValueError("Missing the required parameter `new_license` when calling `update_license`")  # noqa: E501
+        # verify the required parameter 'update_license' is set
+        if self.api_client.client_side_validation and ('update_license' not in local_var_params or  # noqa: E501
+                                                        local_var_params['update_license'] is None):  # noqa: E501
+            raise ApiValueError("Missing the required parameter `update_license` when calling `update_license`")  # noqa: E501
 
         collection_formats = {}
 
@@ -517,8 +517,8 @@ class LicenseApi(object):
         local_var_files = {}
 
         body_params = None
-        if 'new_license' in local_var_params:
-            body_params = local_var_params['new_license']
+        if 'update_license' in local_var_params:
+            body_params = local_var_params['update_license']
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(
             ['application/json'])  # noqa: E501

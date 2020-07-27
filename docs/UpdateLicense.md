@@ -1,9 +1,12 @@
-# JobArray
+# UpdateLicense
 
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**job_ids** | [**object**](.md) |  | 
+**first_name** | **str** | First name | 
+**id** | **float** |  | 
+**last_name** | **str** |  | 
+**role** | **str** |  | 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

@@ -554,18 +554,18 @@ class JobsApi(object):
             collection_formats=collection_formats,
             _request_auth=local_var_params.get('_request_auth'))
 
-    def resume_jobs(self, job_array, **kwargs):  # noqa: E501
+    def resume_jobs(self, jobs_array, **kwargs):  # noqa: E501
         """Resume jobs  # noqa: E501
 
-        Use this method to suspend jobs.  # noqa: E501
+        Use this method to resume jobs.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.resume_jobs(job_array, async_req=True)
+        >>> thread = api.resume_jobs(jobs_array, async_req=True)
         >>> result = thread.get()
 
-        :param job_array: To resume a job, pass an array of the job IDs. (required)
-        :type job_array: JobArray
+        :param jobs_array: To resume a job, pass an array of the job IDs. (required)
+        :type jobs_array: JobsArray
         :param async_req: Whether to execute the request asynchronously.
         :type async_req: bool, optional
         :param _preload_content: if False, the urllib3.HTTPResponse object will
@@ -582,20 +582,20 @@ class JobsApi(object):
         :rtype: object
         """
         kwargs['_return_http_data_only'] = True
-        return self.resume_jobs_with_http_info(job_array, **kwargs)  # noqa: E501
+        return self.resume_jobs_with_http_info(jobs_array, **kwargs)  # noqa: E501
 
-    def resume_jobs_with_http_info(self, job_array, **kwargs):  # noqa: E501
+    def resume_jobs_with_http_info(self, jobs_array, **kwargs):  # noqa: E501
         """Resume jobs  # noqa: E501
 
-        Use this method to suspend jobs.  # noqa: E501
+        Use this method to resume jobs.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.resume_jobs_with_http_info(job_array, async_req=True)
+        >>> thread = api.resume_jobs_with_http_info(jobs_array, async_req=True)
         >>> result = thread.get()
 
-        :param job_array: To resume a job, pass an array of the job IDs. (required)
-        :type job_array: JobArray
+        :param jobs_array: To resume a job, pass an array of the job IDs. (required)
+        :type jobs_array: JobsArray
         :param async_req: Whether to execute the request asynchronously.
         :type async_req: bool, optional
         :param _return_http_data_only: response data without head status code
@@ -622,7 +622,7 @@ class JobsApi(object):
         local_var_params = locals()
 
         all_params = [
-            'job_array'
+            'jobs_array'
         ]
         all_params.extend(
             [
@@ -642,10 +642,10 @@ class JobsApi(object):
                 )
             local_var_params[key] = val
         del local_var_params['kwargs']
-        # verify the required parameter 'job_array' is set
-        if self.api_client.client_side_validation and ('job_array' not in local_var_params or  # noqa: E501
-                                                        local_var_params['job_array'] is None):  # noqa: E501
-            raise ApiValueError("Missing the required parameter `job_array` when calling `resume_jobs`")  # noqa: E501
+        # verify the required parameter 'jobs_array' is set
+        if self.api_client.client_side_validation and ('jobs_array' not in local_var_params or  # noqa: E501
+                                                        local_var_params['jobs_array'] is None):  # noqa: E501
+            raise ApiValueError("Missing the required parameter `jobs_array` when calling `resume_jobs`")  # noqa: E501
 
         collection_formats = {}
 
@@ -659,8 +659,8 @@ class JobsApi(object):
         local_var_files = {}
 
         body_params = None
-        if 'job_array' in local_var_params:
-            body_params = local_var_params['job_array']
+        if 'jobs_array' in local_var_params:
+            body_params = local_var_params['jobs_array']
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(
             ['application/json'])  # noqa: E501
@@ -1071,18 +1071,18 @@ class JobsApi(object):
             collection_formats=collection_formats,
             _request_auth=local_var_params.get('_request_auth'))
 
-    def suspend_jobs(self, job_array, **kwargs):  # noqa: E501
+    def suspend_jobs(self, jobs_array, **kwargs):  # noqa: E501
         """Suspend jobs  # noqa: E501
 
         Use this method to suspend jobs.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.suspend_jobs(job_array, async_req=True)
+        >>> thread = api.suspend_jobs(jobs_array, async_req=True)
         >>> result = thread.get()
 
-        :param job_array: To suspend a job, pass an array of the job IDs. (required)
-        :type job_array: JobArray
+        :param jobs_array: To suspend a job, pass an array of the job IDs. (required)
+        :type jobs_array: JobsArray
         :param async_req: Whether to execute the request asynchronously.
         :type async_req: bool, optional
         :param _preload_content: if False, the urllib3.HTTPResponse object will
@@ -1099,20 +1099,20 @@ class JobsApi(object):
         :rtype: object
         """
         kwargs['_return_http_data_only'] = True
-        return self.suspend_jobs_with_http_info(job_array, **kwargs)  # noqa: E501
+        return self.suspend_jobs_with_http_info(jobs_array, **kwargs)  # noqa: E501
 
-    def suspend_jobs_with_http_info(self, job_array, **kwargs):  # noqa: E501
+    def suspend_jobs_with_http_info(self, jobs_array, **kwargs):  # noqa: E501
         """Suspend jobs  # noqa: E501
 
         Use this method to suspend jobs.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.suspend_jobs_with_http_info(job_array, async_req=True)
+        >>> thread = api.suspend_jobs_with_http_info(jobs_array, async_req=True)
         >>> result = thread.get()
 
-        :param job_array: To suspend a job, pass an array of the job IDs. (required)
-        :type job_array: JobArray
+        :param jobs_array: To suspend a job, pass an array of the job IDs. (required)
+        :type jobs_array: JobsArray
         :param async_req: Whether to execute the request asynchronously.
         :type async_req: bool, optional
         :param _return_http_data_only: response data without head status code
@@ -1139,7 +1139,7 @@ class JobsApi(object):
         local_var_params = locals()
 
         all_params = [
-            'job_array'
+            'jobs_array'
         ]
         all_params.extend(
             [
@@ -1159,10 +1159,10 @@ class JobsApi(object):
                 )
             local_var_params[key] = val
         del local_var_params['kwargs']
-        # verify the required parameter 'job_array' is set
-        if self.api_client.client_side_validation and ('job_array' not in local_var_params or  # noqa: E501
-                                                        local_var_params['job_array'] is None):  # noqa: E501
-            raise ApiValueError("Missing the required parameter `job_array` when calling `suspend_jobs`")  # noqa: E501
+        # verify the required parameter 'jobs_array' is set
+        if self.api_client.client_side_validation and ('jobs_array' not in local_var_params or  # noqa: E501
+                                                        local_var_params['jobs_array'] is None):  # noqa: E501
+            raise ApiValueError("Missing the required parameter `jobs_array` when calling `suspend_jobs`")  # noqa: E501
 
         collection_formats = {}
 
@@ -1176,8 +1176,8 @@ class JobsApi(object):
         local_var_files = {}
 
         body_params = None
-        if 'job_array' in local_var_params:
-            body_params = local_var_params['job_array']
+        if 'jobs_array' in local_var_params:
+            body_params = local_var_params['jobs_array']
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(
             ['application/json'])  # noqa: E501

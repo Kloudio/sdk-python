@@ -247,7 +247,7 @@ This endpoint does not need any parameter.
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **update_license**
-> object update_license(new_license)
+> object update_license(update_license)
 
 Update a license
 
@@ -287,11 +287,11 @@ configuration = kloudio.Configuration(
 with kloudio.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = kloudio.LicenseApi(api_client)
-    new_license = kloudio.NewLicense() # NewLicense | 
+    update_license = kloudio.UpdateLicense() # UpdateLicense | 
 
     try:
         # Update a license
-        api_response = api_instance.update_license(new_license)
+        api_response = api_instance.update_license(update_license)
         pprint(api_response)
     except ApiException as e:
         print("Exception when calling LicenseApi->update_license: %s\n" % e)
@@ -301,7 +301,7 @@ with kloudio.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **new_license** | [**NewLicense**](NewLicense.md)|  | 
+ **update_license** | [**UpdateLicense**](UpdateLicense.md)|  | 
 
 ### Return type
 

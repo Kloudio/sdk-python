@@ -39,7 +39,7 @@ class TestNewConnection(unittest.TestCase):
                 username = 'admin', 
                 password = 'password', 
                 connection_type = 'DATABASE', 
-                db_type = 'SNOWFLAKE', 
+                db_type = 'MYSQL', 
                 production = True, 
                 ssl = True, 
                 share_with = [], 
@@ -62,6 +62,7 @@ class TestNewConnection(unittest.TestCase):
                 username = 'admin',
                 password = 'password',
                 connection_type = 'DATABASE',
+                db_type = 'MYSQL',
         )
 
     def testNewConnection(self):

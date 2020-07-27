@@ -3,14 +3,14 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**name** | **str** |  | 
-**host** | **str** |  | 
-**port** | **str** |  | 
-**database** | **str** |  | 
-**username** | **str** |  | 
-**password** | **str** |  | 
-**connection_type** | **str** |  | 
-**db_type** | **str** |  | [optional] 
+**name** | **str** | The name of the connection, has to be unique for each user, cannot start with numeric characters. | 
+**host** | **str** | Host of the connection. To use localhost, please install Kloudio Gateway. | 
+**port** | **str** | Port for the connection | 
+**database** | **str** | Database name | 
+**username** | **str** | Username used for authentication | 
+**password** | **str** | Password used for authentication | 
+**connection_type** | **str** | Accepted values: CUSTOMERSUCCESS,PAYMENT,CRM,SOCIAL,NOSQL,CLOUDSTORAGE,WEB,FINANCE,DATABASE,ECOMMERCE,AUTOMATION,ERP | 
+**db_type** | **str** | Accepted values: MSSQL,INTERCOM,STRIPE,FACEBOOKPAGES,S4HANA,AIRTABLE,SHOPIFY,FRESHSUCCESS,HUBSPOT,ORACLEFINANCIALSCLOUD,FACEBOOKADS,MYSQL,ORACLE,PGSQL,SALESFORCE,SNOWFLAKE,QUICKBOOKSDESKTOP,GITHUB,SQUARE,QUICKBOOKS,SMARTSHEET,MONGODB,NETSUITE,AZURESQL,XERO,ZAPIER,ZENDESKCHAT,GOOGLEADWORDS,GOOGLEADMANAGER,BIGQUERY,AWSATHENA,DYNAMODB,MARIADB,CUSTOMAPI,JIRA,REDSHIFT,ZENDESKSUPPORT,OUTREACH,ANAPLAN,GOOGLEDRIVE,DROPBOX,AMAZONS3,DATABRICKS | 
 **production** | **bool** |  | [optional] 
 **ssl** | **bool** |  | [optional] 
 **share_with** | [**object**](.md) |  | [optional] 
